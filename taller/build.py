@@ -164,8 +164,8 @@ def sources_html(lang):
     cons = ", ".join(f'<a href="{u}">{html.escape(n)}</a>' for n, u in CONSULTA)
     return f'<section class="sources" aria-labelledby="fuentes"><h2 id="fuentes">{f["h"]}</h2><ol>{"".join(lis)}</ol><p class="how">{f["cons"]}: {cons}.</p><p class="how">{f["how"]}</p></section>'
 
-HUB = {"es": dict(slug="pensamientos-es.html", title="Pensamientos de un estudiante", desc="Ensayos de un estudiante de psicología sobre el método, la entrevista y lo que no se enseña en el aula."),
-       "en": dict(slug="pensamientos-en.html", title="Thoughts of a Student", desc="Essays by a psychology student on method, the clinical interview and what the classroom leaves out.")}
+HUB = {"es": dict(slug="pensamientos-es.html", title="Pensamientos de un estudiante", desc="Ensayos de estudiantes de psicología sobre el método, la entrevista y lo que no se enseña en el aula."),
+       "en": dict(slug="pensamientos-en.html", title="Thoughts of a Student", desc="Essays by psychology students on method, the clinical interview and what the classroom leaves out.")}
 INDEX = {"es": "index.html", "en": "index-en.html"}
 
 def pretty(slug):
@@ -247,6 +247,7 @@ def footer(lang, alt, pre):
 <p class="rights license-notice">{t['rights'].replace('{pre}', pre)}</p>
 <p class="rights"><a href="{pre}{LIC[lang]}">{t['lic']}</a> · <a href="{pre}{FEED}">{t['feed']}</a></p>
 {langsw(lang, alt, pre)}
+<small class="site-signature">Diseño y propiedad: Carlos Ravello Joo<br>Modelo de coherencia dinámico · MCD</small>
 </div>
 </footer>
 </body>
@@ -312,18 +313,18 @@ def write(slug, s):
 
 # ---------- INDEX ----------
 IDX = {
- "es": dict(title="Researching Mind — Bitácora de investigación en psicología", desc="Bitácora de un estudiante de psicología: ensayos, glosario con páginas verificadas, dinámicas para el aula y datos abiertos con el código de cada cifra.",
-   label="Bitácora de investigación · Psicología", lead="Notas de un estudiante de psicología que verifica cada cita en su fuente: ensayos, un glosario con páginas, dinámicas para el aula y datos abiertos con el código que produce cada número.",
-   r0="Regla cero", q="Ninguna cifra, cita ni número de página entra sin haberse leído en la fuente.", allE="Todos los ensayos", cont="Contenido", who="Quién escribe",
-   bio="Estudio psicología en Trujillo, Perú. Escribo sobre método, evaluación y lo que casi no se enseña.", prep="En preparación", seeData="Ver datos y código",
+ "es": dict(title="Researching Mind — Bitácora de investigación en psicología", desc="Bitácora de estudiantes de psicología: ensayos, glosario con páginas verificadas, dinámicas para el aula y datos abiertos con el código de cada cifra.",
+   label="Bitácora de investigación · Psicología", lead="Notas de estudiantes de psicología que verificamos cada cita en su fuente: ensayos, un glosario con páginas, dinámicas para el aula y datos abiertos con el código que produce cada número.",
+   r0="Regla cero", q="Ninguna cifra, cita ni número de página entra sin haberse leído en la fuente.", allE="Todos los ensayos", cont="Contenido", who="Quiénes escribimos",
+   bio="Estudiamos psicología en Trujillo, Perú. Escribimos sobre método, evaluación y lo que casi no se enseña.", prep="En preparación", seeData="Ver datos y código",
    items=[("glosario", "Glosario", "Casi cien términos, cada uno con su fuente y su página verificada. De la entrevista clínica al cerebro bayesiano."),
           ("dinamicas", "Dinámicas", "Experimentos para hacer en clase: Bayes a dos prevalencias, la ilusión de validez, la regresión a la media."),
           ("bitacora", "Bitácora", "Lo que no traen los manuales: cómo encontrar un artículo en la biblioteca virtual, cómo citar una entrada de enciclopedia, qué hacer cuando el botón «Citar» se equivoca."),
           ("datos", "Datos abiertos", "Los datos anonimizados de un estudio de prevalencia de trastornos del sueño (N = 57) y el código Python que reproduce cada cifra.")]),
- "en": dict(title="Researching Mind — A psychology research notebook", desc="A psychology student's research notebook: essays, a glossary with verified page numbers, classroom experiments, and open data with the code behind every figure.",
-   label="Research notebook · Psychology", lead="Notes from a psychology student who checks every citation at its source: essays, a glossary with page numbers, classroom experiments, and open data with the code behind every figure.",
-   r0="Rule zero", q="No figure, quotation or page number goes in without being read at the source.", allE="All essays", cont="Contents", who="Who writes",
-   bio="I study psychology in Trujillo, Peru. I write about method, assessment and what is rarely taught.", prep="In preparation", seeData="See data and code",
+ "en": dict(title="Researching Mind — A psychology research notebook", desc="A research notebook by psychology students: essays, a glossary with verified page numbers, classroom experiments, and open data with the code behind every figure.",
+   label="Research notebook · Psychology", lead="Notes from psychology students who check every citation at its source: essays, a glossary with page numbers, classroom experiments, and open data with the code behind every figure.",
+   r0="Rule zero", q="No figure, quotation or page number goes in without being read at the source.", allE="All essays", cont="Contents", who="Who we are",
+   bio="We study psychology in Trujillo, Peru. We write about method, assessment and what is rarely taught.", prep="In preparation", seeData="See data and code",
    items=[("glossary", "Glossary", "Nearly a hundred terms, each with its source and a verified page number — from the clinical interview to the Bayesian brain."),
           ("tools", "Classroom tools", "Experiments to run in class: Bayes at two prevalences, the illusion of validity, regression to the mean."),
           ("notebook", "Notebook", "What the manuals leave out: finding an article in a university library, citing an encyclopedia entry, what to do when the “Cite” button gets it wrong."),
