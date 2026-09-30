@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+<title>Researching Mind</title>
+<link>https://researchingmind.com/</link>
+<atom:link href="https://researchingmind.com/rss.xml" rel="self" type="application/rss+xml"/>
+<description>Bitácora de investigación en psicología · A psychology research notebook</description>
+<language>es</language>
+<copyright>© 2026 Carlos Eduardo Ravello Joo. Todos los derechos reservados · All rights reserved</copyright>
+<lastBuildDate>Wed, 30 Sep 2026 12:00:00 -0500</lastBuildDate>
+<item><title>La habitación incómoda</title><link>https://researchingmind.com/pensamientos/la-habitacion-incomoda-es.html</link><guid isPermaLink="true">https://researchingmind.com/pensamientos/la-habitacion-incomoda-es.html</guid><pubDate>Wed, 30 Sep 2026 12:00:00 -0500</pubDate><dc:creator>Carlos Eduardo Ravello Joo</dc:creator><dc:language>es</dc:language><description>Hay dos Freud: el que se estudia para el examen y el del método. Un ensayo sobre el encuadre, el silencio y lo que casi no se enseña en psicología.</description></item>
+<item><title>The Uncomfortable Room</title><link>https://researchingmind.com/pensamientos/la-habitacion-incomoda-en.html</link><guid isPermaLink="true">https://researchingmind.com/pensamientos/la-habitacion-incomoda-en.html</guid><pubDate>Wed, 30 Sep 2026 12:00:00 -0500</pubDate><dc:creator>Carlos Eduardo Ravello Joo</dc:creator><dc:language>en</dc:language><description>There are two Freuds: the one studied for the exam and the Freud of method. An essay on the frame, silence and what psychology rarely teaches.</description></item>
+</channel>
+</rss>

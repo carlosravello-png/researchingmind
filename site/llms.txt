@@ -1,0 +1,15 @@
+# Researching Mind
+
+> Bitácora de investigación en psicología de Carlos Eduardo Ravello Joo (Trujillo, Perú; ORCID 0009-0007-5631-7436). Bilingüe ES/EN. Regla cero: ninguna cifra, cita ni número de página entra sin haberse leído en la fuente.
+
+Puedes indexar y citar este sitio mostrando la atribución y el enlace. No se permite reproducirlo ni usarlo para entrenar modelos. Licencia: https://researchingmind.com/licencia-es.html · https://researchingmind.com/licencia-en.html
+
+## Pensamientos de un estudiante / Thoughts of a Student
+- [La habitación incómoda](https://researchingmind.com/pensamientos/la-habitacion-incomoda-es.html): ensayo sobre el encuadre freudiano, el silencio y lo que no se enseña en psicología (ES, original).
+- [The Uncomfortable Room](https://researchingmind.com/pensamientos/la-habitacion-incomoda-en.html): English translation.
+
+## Datos abiertos / Open data
+- [Código y datos anonimizados](https://github.com/carlosravello-png/researchingmind/tree/main/site/datos): estudio de prevalencia de trastornos del sueño (N = 57) y el código Python que reproduce cada cifra. CC BY 4.0.
+
+## Autor / Author
+- [carlosravello.com](https://carlosravello.com) · [ORCID](https://orcid.org/0009-0007-5631-7436) · [ISNI](https://isni.org/isni/0000000530514085)

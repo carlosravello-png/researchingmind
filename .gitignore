@@ -1,0 +1,32 @@
+# ---------------------------------------------------------------
+# Datos crudos de participantes: NUNCA entran al repositorio.
+# La version publica se genera con site/datos/preparar_datos_publicos.py
+# ---------------------------------------------------------------
+COS_*.pdf
+COS_*.PDF
+cos_codificado.csv
+cos_datos.json
+casos_marcados.md
+resumen_control.md
+
+# Material de terceros o con derechos de autor
+CAPTURAS DE PANTALLA/
+FUENTES_GLOSARIO/
+TRABAJO AMIGA/
+EBSCO-FullText*.pdf
+Captura de pantalla*.png
+
+# Temporales de Office, Windows y Python
+~$*
+*.tmp
+Thumbs.db
+desktop.ini
+__pycache__/
+
+# Copias de seguridad del taller (no se publican)
+*_backup.py
+
+# Nada de la universidad del autor entra al repo publico
+expediente/myloft/
+HOJA_DE_RUTA_*
+*_backup.txt
