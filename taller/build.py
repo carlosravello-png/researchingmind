@@ -26,7 +26,7 @@ def website(lang):
             "description": "Bitácora de investigación en psicología: ensayos, glosario, dinámicas para el aula y datos abiertos." if lang == "es"
                            else "A psychology research notebook: essays, glossary, classroom tools and open data.",
             "inLanguage": ["es", "en"], "author": {"@id": PID}, "publisher": {"@id": PID},
-            "copyrightHolder": {"@id": PID}, "license": D + LIC[lang]}
+            "copyrightHolder": {"@id": PID}, "license": urlabs(LIC[lang])}
 
 # ---------- Diccionario Wikidata (expediente/entidades_wikidata.md, verificado 2026-09-30) ----------
 WD = "https://www.wikidata.org/wiki/"
@@ -168,7 +168,13 @@ HUB = {"es": dict(slug="pensamientos-es.html", title="Pensamientos de un estudia
        "en": dict(slug="pensamientos-en.html", title="Thoughts of a Student", desc="Essays by a psychology student on method, the clinical interview and what the classroom leaves out.")}
 INDEX = {"es": "index.html", "en": "index-en.html"}
 
-def urlabs(slug): return D if slug == "index.html" else D + slug
+def pretty(slug):
+    # Cloudflare Pages sirve /x para x.html y redirige x.html -> /x (308). Toda URL publica va sin .html.
+    if slug.endswith(".html"): slug = slug[:-5]
+    if slug == "index": return ""
+    if slug.endswith("/index"): return slug[:-5]
+    return slug
+def urlabs(slug): return D + pretty(slug)
 
 def head(lang, title, desc, slug, alt, ld, og_type="website", extra_og=""):
     pre = "../" * slug.count("/")
@@ -185,7 +191,7 @@ def head(lang, title, desc, slug, alt, ld, og_type="website", extra_og=""):
 <link rel="alternate" hreflang="es" href="{urlabs(alt['es'])}">
 <link rel="alternate" hreflang="en" href="{urlabs(alt['en'])}">
 <link rel="alternate" hreflang="x-default" href="{urlabs(alt['es'])}">
-<link rel="license" href="{D}{LIC[lang]}">
+<link rel="license" href="{urlabs(LIC[lang])}">
 <link rel="alternate" type="application/rss+xml" title="Researching Mind" href="{D}{FEED}">
 <link rel="icon" href="{pre}favicon.svg" type="image/svg+xml">
 <meta name="color-scheme" content="light dark">
@@ -261,7 +267,7 @@ def crumbs_ld(slug, items):
 
 def webpage(slug, lang, name, desc, typ="WebPage", crumbs=True, **kw):
     n = {"@type": typ, "@id": urlabs(slug) + "#webpage", "url": urlabs(slug), "name": name, "description": desc, "inLanguage": lang,
-         "isPartOf": {"@id": D + "#website"}, "author": {"@id": PID}, "license": D + LIC[lang], "dateModified": HOY}
+         "isPartOf": {"@id": D + "#website"}, "author": {"@id": PID}, "license": urlabs(LIC[lang]), "dateModified": HOY}
     if crumbs: n["breadcrumb"] = {"@id": urlabs(slug) + "#breadcrumb"}
     n.update(kw)
     return n
@@ -286,7 +292,21 @@ def essay_card(lang, pre):
     e = ESSAY[lang]
     return f'<article class="card"><p class="meta">{e["kicker"]} · <time datetime="{HOY}">{e["date"]}</time></p><h3><a href="{pre}{e["slug"]}">{e["title"]}</a></h3><p>{e["dek"]}.</p></article>'
 
+import posixpath
+def rootify(slug, s):
+    base = posixpath.dirname(slug)
+    def fix(m):
+        attr, url = m.group(1), m.group(2)
+        if re.match(r"^(https?:|mailto:|tel:|#|/|data:)", url): return m.group(0)
+        path, _, frag = url.partition("#")
+        full = posixpath.normpath(posixpath.join(base, path)) if path else slug
+        if full == ".": full = "index.html"
+        out = "/" + pretty(full)
+        return f'{attr}="{out}{"#" + frag if frag else ""}"'
+    return re.sub(r'(href|src)="([^"]*)"', fix, s)
+
 def write(slug, s):
+    if slug.endswith(".html"): s = rootify(slug, s)
     p = SITE / slug; p.parent.mkdir(parents=True, exist_ok=True)
     p.write_text(s, encoding="utf-8", newline="\n")
 
@@ -376,7 +396,7 @@ for lang in ("es", "en"):
            "wordCount": words, "timeRequired": "PT10M", "genre": e["kicker"], "keywords": e["tags"],
            "author": {"@id": PID}, "publisher": {"@id": PID}, "copyrightHolder": {"@id": PID}, "copyrightYear": 2026,
            "copyrightNotice": e["notice"], "creditText": "Carlos Eduardo Ravello Joo · Researching Mind",
-           "license": D + LIC[lang], "usageInfo": D + LIC[lang], "isAccessibleForFree": True,
+           "license": urlabs(LIC[lang]), "usageInfo": urlabs(LIC[lang]), "isAccessibleForFree": True,
            "about": [ent(k, lang) for k in ABOUT], "mentions": [ent(k, lang) for k in MENTIONS], "citation": citations(),
            "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".essay-head h1", ".dek"]},
            "mainEntityOfPage": {"@id": urlabs(slug) + "#webpage"}, "isPartOf": {"@id": D + "#website"}}
@@ -461,6 +481,31 @@ for lang in ("es", "en"):
 '''
     write(slug, head(lang, L["title"] + " · Researching Mind", L["desc"], slug, LIC, ld) + "\n" + header(lang, LIC, "") + "\n" + body + footer(lang, LIC, ""))
 
+# ---------- 404 ----------
+NF = f'''<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Página no encontrada · Page not found — Researching Mind</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta name="color-scheme" content="light dark">
+<style>{CSS}</style>
+</head>
+<body>
+<main id="main" class="hub"><div class="wrap">
+<p class="label">404</p>
+<h1>Esta página no existe</h1>
+<p class="intro">Puede que el enlace esté mal escrito o que la página se haya movido. <a href="/">Volver al inicio</a> · <a href="/pensamientos-es">Pensamientos de un estudiante</a></p>
+<h2 lang="en">This page does not exist</h2>
+<p class="intro" lang="en">The link may be mistyped or the page may have moved. <a href="/index-en">Back to home</a> · <a href="/pensamientos-en">Thoughts of a Student</a></p>
+</div></main>
+</body>
+</html>
+'''
+write("404.html", NF)
+
 # ---------- SITEMAP ----------
 pairs = [(INDEX["es"], INDEX["en"]), (HUB["es"]["slug"], HUB["en"]["slug"]), (ESSAY["es"]["slug"], ESSAY["en"]["slug"]), (LIC["es"], LIC["en"])]
 urls = []
@@ -494,7 +539,7 @@ write("llms.txt", f'''# Researching Mind
 
 > Bitácora de investigación en psicología de Carlos Eduardo Ravello Joo (Trujillo, Perú; ORCID 0009-0007-5631-7436). Bilingüe ES/EN. Regla cero: ninguna cifra, cita ni número de página entra sin haberse leído en la fuente.
 
-Puedes indexar y citar este sitio mostrando la atribución y el enlace. No se permite reproducirlo ni usarlo para entrenar modelos. Licencia: {D}{LIC["es"]} · {D}{LIC["en"]}
+Puedes indexar y citar este sitio mostrando la atribución y el enlace. No se permite reproducirlo ni usarlo para entrenar modelos. Licencia: {urlabs(LIC["es"])} · {urlabs(LIC["en"])}
 
 ## Pensamientos de un estudiante / Thoughts of a Student
 - [La habitación incómoda]({urlabs(ESSAY["es"]["slug"])}): ensayo sobre el encuadre freudiano, el silencio y lo que no se enseña en psicología (ES, original).

@@ -29,21 +29,32 @@ for p in paginas:
             obj = json.loads(blk, object_pairs_hook=sin_duplicadas); graph += obj.get("@graph", [obj])
         except ValueError as e:
             (malos["claves_duplicadas"] if "duplicada" in str(e) else malos["ld_roto"]).append(f"{rel}: {e}")
+    if rel == "404.html":
+        if 'content="noindex"' not in s: malos["canonical"].append("404 sin noindex")
+        continue
     canon = re.search(r'<link rel="canonical" href="([^"]+)"', s).group(1)
-    esperado = D + ("" if rel == "index.html" else rel)
+    limpio = rel[:-5] if rel.endswith(".html") else rel
+    esperado = D + ("" if limpio == "index" else limpio)
     if canon != esperado: malos["canonical"].append(f"{rel}: {canon}")
     hl = dict(re.findall(r'<link rel="alternate" hreflang="([^"]+)" href="([^"]+)"', s))
     info[rel] = (canon, hl)
     # enlaces internos
-    for h in re.findall(r'href="([^"#:]+)(?:#[^"]*)?"', s):
-        t = (p.parent / h).resolve()
-        if not t.exists(): malos["enlace_roto"].append(f"{rel} -> {h}")
+    # Cloudflare Pages: /x sirve x.html; un enlace interno con .html provoca un 308 y cuenta como fallo
+    for h in re.findall(r'(?:href|src)="([^"#:]*)(?:#[^"]*)?"', s):
+        if h == "": continue
+        if not h.startswith("/"): malos["enlace_roto"].append(f"{rel} -> {h} (relativo)"); continue
+        if h.endswith(".html"): malos["enlace_roto"].append(f"{rel} -> {h} (con .html: redirige)"); continue
+        base = SITE / h.lstrip("/")
+        cands = [base / "index.html"] if h.endswith("/") else [base, base.with_name(base.name + ".html")]
+        if not any(c.is_file() for c in cands): malos["enlace_roto"].append(f"{rel} -> {h}")
+    for u in re.findall(r'https://researchingmind\.com/[^"\s<]*', s):
+        if u.split("#")[0].endswith(".html"): malos["enlace_roto"].append(f"{rel}: URL absoluta con .html {u}")
     # Q-IDs solo del diccionario
     for q in set(re.findall(r"wikidata\.org/wiki/(Q\d+)", s)):
         if q not in Q_OK: malos["q_sin_diccionario"].append(f"{rel}: {q}")
     # licencia en tres capas: head + pie con rel=license + JSON-LD
-    head_ok = re.search(r'<link rel="license" href="https://researchingmind\.com/licencia-(es|en)\.html">', s)
-    pie_ok = re.search(r'<p class="rights license-notice">.*?<a rel="license" href="[^"]*licencia-(es|en)\.html"', s, re.S)
+    head_ok = re.search(r'<link rel="license" href="https://researchingmind\.com/licencia-(es|en)">', s)
+    pie_ok = re.search(r'<p class="rights license-notice">.*?<a rel="license" href="/licencia-(es|en)"', s, re.S)
     ld_ok = any(n.get("license", "").startswith(D + "licencia-") for n in graph if n.get("@type") in ("WebSite",))
     if not (head_ok and pie_ok and ld_ok): malos["licencia_capas"].append(f"{rel}: head={bool(head_ok)} pie={bool(pie_ok)} ld={ld_ok}")
     # grid visible == ItemList
