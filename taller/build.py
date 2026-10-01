@@ -7,7 +7,7 @@ from pathlib import Path
 AQUI = Path(__file__).resolve().parent
 SITE = AQUI.parent / "site"
 D = "https://researchingmind.com/"
-HOY = "2026-09-30"
+HOY = "2026-10-01"
 PID = "https://carlosravello.com/#person"
 ORCID = "https://orcid.org/0009-0007-5631-7436"
 ISNI = "https://isni.org/isni/0000000530514085"
@@ -54,6 +54,20 @@ ENT = {  # clave: (tipo, nombre es, nombre en, Q)
  "sartre": ("Person", "Jean-Paul Sartre", "Jean-Paul Sartre", "Q9364"),
  "ruisenor": ("Book", "Matar a un ruiseñor", "To Kill a Mockingbird", "Q212340"),
  "funcionalismo": ("Thing", "psicología funcionalista", "functional psychology", "Q2301783"),
+ "cognitiva": ("Thing", "psicología cognitiva", "cognitive psychology", "Q23373"),
+ "computacional": ("Thing", "cognición computacional", "computational cognition", "Q5157304"),
+ "energialibre": ("Thing", "principio de energía libre", "free energy principle", "Q17014702"),
+ "bayes": ("Thing", "teorema de Bayes", "Bayes' theorem", "Q182505"),
+ "friston": ("Person", "Karl J. Friston", "Karl J. Friston", "Q6371926"),
+ "bateson": ("Person", "Gregory Bateson", "Gregory Bateson", "Q314252"),
+ "kahneman": ("Person", "Daniel Kahneman", "Daniel Kahneman", "Q233950"),
+ "tversky": ("Person", "Amos Tversky", "Amos Tversky", "Q474333"),
+ "heuristica": ("Thing", "heurística", "heuristic", "Q201413"),
+ "regresion": ("Thing", "regresión a la media", "regression toward the mean", "Q1135405"),
+ "ansiedad": ("Thing", "ansiedad", "anxiety", "Q154430"),
+ "llm": ("Thing", "gran modelo de lenguaje", "large language model", "Q115305900"),
+ "adulacion": ("Thing", "adulación en sistemas de IA", "sycophancy (AI)", "Q139915450"),
+ "tbayes": ("Person", "Thomas Bayes", "Thomas Bayes", "Q208452"),
 }
 def ent(k, lang):
     t, es, en, q = ENT[k]
@@ -145,24 +159,89 @@ FT = {"es": dict(h="Fuentes", cons="Obras de consulta (Wikipedia, 30/09/2026)",
                  how=f'Cada dato histórico de este ensayo se leyó en su fuente el 30 de septiembre de 2026. El <a href="{EXPED}">expediente de verificación</a> guarda, para cada uno, la fuente, la fecha y la cita.'),
       "en": dict(h="Sources", cons="Reference works (Wikipedia, 30 Sep 2026)",
                  how=f'Every historical claim in this essay was read at its source on 30 September 2026. The <a href="{EXPED}">verification file</a> (in Spanish) records the source, date and quotation for each one.')}
-def citations():
+def citations(E):
     out = []
-    for txt, url, node in FUENTES:
+    for txt, url, node in E["fuentes"]:
         n = dict(node)
         if url: n["url"] = url
         out.append(n)
     return out
-def sources_html(lang):
-    f = FT[lang]; lis = []
+def sources_html(E, lang):
+    f = E["ft"][lang]; lis = []
     EN = [("(s. f.)", "(n.d.)"), ("[Entrevista en video]", "[Video interview]"), ("(Trabajo original de 1925)", "(Original work published 1925)"),
           ("(Trabajo original publicado en 1925)", "(Original work published 1925)"), ("Nunberg, H. y Federn", "Nunberg, H., & Federn"),
-          ("Etcheverry, Trad.). En", "Etcheverry, Trans.). In"), ("(2020, 14 de mayo)", "(2020, May 14)"), ("(Vol. 20, p. 56)", "(Vol. 20, p. 56)")]
-    for txt, url, _ in FUENTES:
+          ("Etcheverry, Trad.). En", "Etcheverry, Trans.). In"), ("(2020, 14 de mayo)", "(2020, May 14)"), ("(Vol. 20, p. 56)", "(Vol. 20, p. 56)"),
+          (" y A. Tversky (Eds.)", ", & A. Tversky (Eds.)"), (" y DellaVigna", ", & DellaVigna"), ("(2017, 14 de febrero)", "(2017, February 14)"), ("Comentario en", "Comment on"), ("(R. Alcalde, Trad.)", "(R. Alcalde, Trans.)"), ("(Conferencia original de 1970; en inglés en", "(Original lecture 1970; in English in"), ("(Escritor) y Kirkland, M. (Director)", "(Writer), & Kirkland, M. (Director)"), ("(temporada 6, episodio 21) [Episodio de serie de televisión]", "(Season 6, Episode 21) [TV series episode]"), (" y Kahneman", ", & Kahneman"), (" y Tversky", ", & Tversky"), (" y Klein", ", & Klein"), (" y Gusnard", ", & Gusnard"), (", R. A. y Peterson", ", R. A., & Peterson"),
+          ("(Eds.), ", "(Eds.), "), ("(cap. 4, pp. 48–68)", "(pp. 48–68)"), ("(Conferencia original de 1970)", "(Original lecture 1970)"), ("Preprint en arXiv", "arXiv preprint"), (". En ", ". In ")]
+    for txt, url, _ in E["fuentes"]:
         if lang == "en":
             for x, y in EN: txt = txt.replace(x, y)
         lis.append(f'<li>{txt}' + (f' <a href="{url}">{html.escape(url)}</a>' if url else "") + '</li>')
-    cons = ", ".join(f'<a href="{u}">{html.escape(n)}</a>' for n, u in CONSULTA)
-    return f'<section class="sources" aria-labelledby="fuentes"><h2 id="fuentes">{f["h"]}</h2><ol>{"".join(lis)}</ol><p class="how">{f["cons"]}: {cons}.</p><p class="how">{f["how"]}</p></section>'
+    cons = ", ".join(f'<a href="{u}">{html.escape(n)}</a>' for n, u in E["consulta"])
+    conshtml = f'<p class="how">{f["cons"]}: {cons}.</p>' if E["consulta"] else ""
+    return f'<section class="sources" aria-labelledby="fuentes"><h2 id="fuentes">{f["h"]}</h2><ol>{"".join(lis)}</ol>{conshtml}<p class="how">{f["how"]}</p></section>'
+
+# ---------- Ensayos (el mas reciente primero) ----------
+ESSAY["es"].update(iso="PT10M"); ESSAY["en"].update(iso="PT10M")
+E1 = dict(es=ESSAY["es"], en=ESSAY["en"], fecha="2026-09-30", rfc="Wed, 30 Sep 2026 12:00:00 -0500",
+          about=ABOUT, mentions=MENTIONS, fuentes=FUENTES, consulta=CONSULTA, ft=FT,
+          llms="ensayo sobre el encuadre freudiano, el silencio y lo que no se enseña en psicología")
+EXPED2 = GHREPO + "/blob/main/expediente/pensamientos/el-cerebro-paga-dos-facturas_verificacion.md"
+DATOS = GHREPO + "/tree/main/site/datos"
+E2 = dict(
+ es=dict(slug="pensamientos/el-cerebro-paga-dos-facturas-es.html", title="El cerebro paga dos facturas", dek="Un prefacio a la psicología cognitiva y computacional",
+   kicker="Ensayo", date="1 de octubre de 2026", read="15 min de lectura", iso="PT15M", src="dos-facturas-es.txt",
+   desc="El cerebro predice para no gastar de más. Bateson, Friston, Kahneman y un reverendo del siglo XVIII: qué es «en base a mi experiencia», cómo se pule, y por qué la ansiedad y la entrevista están en el mismo cuaderno.",
+   tags=["Psicología cognitiva", "Psicología computacional", "Bayes", "Friston", "Kahneman"], note="", back="Todos los ensayos",
+   notice="© 2026 Carlos Eduardo Ravello Joo — Todos los derechos reservados"),
+ en=dict(slug="pensamientos/el-cerebro-paga-dos-facturas-en.html", title="The Brain Pays Two Bills", dek="A preface to cognitive and computational psychology",
+   kicker="Essay", date="1 October 2026", read="15 min read", iso="PT15M", src="dos-facturas-en.txt",
+   desc="The brain predicts so as not to overspend. Bateson, Friston, Kahneman and an eighteenth-century clergyman: what «in my experience» really is, how it gets polished, and why anxiety and the interview sit in the same notebook.",
+   tags=["Cognitive psychology", "Computational psychology", "Bayes", "Friston", "Kahneman"], note="Translated from the Spanish original.", back="All essays",
+   notice="© 2026 Carlos Eduardo Ravello Joo — All rights reserved"),
+ fecha="2026-10-01", rfc="Thu, 01 Oct 2026 12:00:00 -0500",
+ about=["cognitiva", "computacional", "energialibre", "bayes"],
+ mentions=["friston", "bateson", "kahneman", "tversky", "tbayes", "heuristica", "ansiedad", "psicoterapia", "llm", "adulacion"],
+ consulta=[("Thomas Bayes", "https://en.wikipedia.org/wiki/Thomas_Bayes")],
+ llms="ensayo sobre el cerebro predictivo, Bayes y los sesgos de juicio; puerta a la psicología cognitiva y computacional",
+ fuentes=[
+  ("Bateson, G. (1998). Forma, sustancia y diferencia (R. Alcalde, Trad.). En <em>Pasos hacia una ecología de la mente</em>. Lohlé-Lumen. (Conferencia original de 1970; en inglés en <em>Steps to an ecology of mind</em>, 1972).", "",
+   {"@type": "Chapter", "name": "Form, substance and difference", "author": {"@type": "Person", "name": "Gregory Bateson", "sameAs": WD + "Q314252"}, "isPartOf": {"@type": "Book", "name": "Steps to an Ecology of Mind", "datePublished": "1972"}}),
+  ("Card, D. y DellaVigna, S. (2013). Nine facts about top journals in economics. <em>Journal of Economic Literature, 51</em>(1), 144–161.", "https://doi.org/10.1257/jel.51.1.144",
+   {"@type": "ScholarlyArticle", "name": "Nine Facts about Top Journals in Economics", "author": [{"@type": "Person", "name": "David Card"}, {"@type": "Person", "name": "Stefano DellaVigna"}], "datePublished": "2013", "isPartOf": {"@type": "Periodical", "name": "Journal of Economic Literature"}, "sameAs": "https://doi.org/10.1257/jel.51.1.144"}),
+  ("Friston, K. (2010). The free-energy principle: A unified brain theory? <em>Nature Reviews Neuroscience, 11</em>(2), 127–138.", "https://doi.org/10.1038/nrn2787",
+   {"@type": "ScholarlyArticle", "name": "The free-energy principle: a unified brain theory?", "author": {"@type": "Person", "name": "Karl J. Friston", "sameAs": WD + "Q6371926"}, "datePublished": "2010", "isPartOf": {"@type": "Periodical", "name": "Nature Reviews Neuroscience"}, "sameAs": "https://doi.org/10.1038/nrn2787"}),
+  ("Hirsh, J. B., Mar, R. A. y Peterson, J. B. (2012). Psychological entropy: A framework for understanding uncertainty-related anxiety. <em>Psychological Review, 119</em>(2), 304–320.", "https://doi.org/10.1037/a0026767",
+   {"@type": "ScholarlyArticle", "name": "Psychological entropy: A framework for understanding uncertainty-related anxiety", "author": [{"@type": "Person", "name": "Jacob B. Hirsh"}, {"@type": "Person", "name": "Raymond A. Mar"}, {"@type": "Person", "name": "Jordan B. Peterson"}], "datePublished": "2012", "isPartOf": {"@type": "Periodical", "name": "Psychological Review"}, "sameAs": "https://doi.org/10.1037/a0026767"}),
+  ("Holmes, J. (2022). Friston's free energy principle: New life for psychoanalysis? <em>BJPsych Bulletin, 46</em>(3), 164–168.", "https://doi.org/10.1192/bjb.2021.6",
+   {"@type": "ScholarlyArticle", "name": "Friston's free energy principle: new life for psychoanalysis?", "author": {"@type": "Person", "name": "Jeremy Holmes"}, "datePublished": "2022", "isPartOf": {"@type": "Periodical", "name": "BJPsych Bulletin"}, "sameAs": "https://doi.org/10.1192/bjb.2021.6"}),
+  ("Kahneman, D. (2017, 14 de febrero). Comentario en «Reconstruction of a train wreck: How priming research went off the rails». <em>Replicability-Index</em>.", "https://replicationindex.com/2017/02/02/reconstruction-of-a-train-wreck-how-priming-research-went-of-the-rails/comment-page-1/#comment-1454",
+   {"@type": "Comment", "name": "Comment by Daniel Kahneman on 'Reconstruction of a Train Wreck'", "author": {"@type": "Person", "name": "Daniel Kahneman", "sameAs": WD + "Q233950"}, "datePublished": "2017-02-14"}),
+  ("Kahneman, D. y Klein, G. (2009). Conditions for intuitive expertise: A failure to disagree. <em>American Psychologist, 64</em>(6), 515–526.", "https://doi.org/10.1037/a0016755",
+   {"@type": "ScholarlyArticle", "name": "Conditions for intuitive expertise: A failure to disagree", "author": [{"@type": "Person", "name": "Daniel Kahneman", "sameAs": WD + "Q233950"}, {"@type": "Person", "name": "Gary Klein"}], "datePublished": "2009", "isPartOf": {"@type": "Periodical", "name": "American Psychologist"}, "sameAs": "https://doi.org/10.1037/a0016755"}),
+  ("Kahneman, D. y Tversky, A. (1979). Prospect theory: An analysis of decision under risk. <em>Econometrica, 47</em>(2), 263–291.", "https://doi.org/10.2307/1914185",
+   {"@type": "ScholarlyArticle", "name": "Prospect Theory: An Analysis of Decision under Risk", "author": [{"@type": "Person", "name": "Daniel Kahneman", "sameAs": WD + "Q233950"}, {"@type": "Person", "name": "Amos Tversky", "sameAs": WD + "Q474333"}], "datePublished": "1979", "isPartOf": {"@type": "Periodical", "name": "Econometrica"}, "sameAs": "https://doi.org/10.2307/1914185"}),
+  ("Kahneman, D. y Tversky, A. (1982). On the psychology of prediction. En D. Kahneman, P. Slovic y A. Tversky (Eds.), <em>Judgment under uncertainty: Heuristics and biases</em> (cap. 4, pp. 48–68). Cambridge University Press.", "",
+   {"@type": "Chapter", "name": "On the psychology of prediction", "author": [{"@type": "Person", "name": "Daniel Kahneman", "sameAs": WD + "Q233950"}, {"@type": "Person", "name": "Amos Tversky", "sameAs": WD + "Q474333"}], "isPartOf": {"@type": "Book", "name": "Judgment under Uncertainty: Heuristics and Biases", "datePublished": "1982", "publisher": {"@type": "Organization", "name": "Cambridge University Press"}}, "pagination": "48-68"}),
+  ("Lennie, P. (2003). The cost of cortical computation. <em>Current Biology, 13</em>(6), 493–497.", "https://doi.org/10.1016/S0960-9822(03)00135-0",
+   {"@type": "ScholarlyArticle", "name": "The cost of cortical computation", "author": {"@type": "Person", "name": "Peter Lennie"}, "datePublished": "2003", "isPartOf": {"@type": "Periodical", "name": "Current Biology"}, "sameAs": "https://doi.org/10.1016/S0960-9822(03)00135-0"}),
+  ("NobelPrize.org. (s. f.). <em>The Sveriges Riksbank Prize in Economic Sciences in Memory of Alfred Nobel 2002</em>.", "https://www.nobelprize.org/prizes/economic-sciences/2002/summary/",
+   {"@type": "WebPage", "name": "The Sveriges Riksbank Prize in Economic Sciences in Memory of Alfred Nobel 2002", "publisher": {"@type": "Organization", "name": "Nobel Prize Outreach"}}),
+  ("Raichle, M. E. y Gusnard, D. A. (2002). Appraising the brain's energy budget. <em>Proceedings of the National Academy of Sciences, 99</em>(16), 10237–10239.", "https://doi.org/10.1073/pnas.172399499",
+   {"@type": "ScholarlyArticle", "name": "Appraising the brain's energy budget", "author": [{"@type": "Person", "name": "Marcus E. Raichle"}, {"@type": "Person", "name": "Debra A. Gusnard"}], "datePublished": "2002", "isPartOf": {"@type": "Periodical", "name": "Proceedings of the National Academy of Sciences"}, "sameAs": "https://doi.org/10.1073/pnas.172399499"}),
+  ("Sharma, M., Tong, M., Korbak, T. et al. (2023). <em>Towards understanding sycophancy in language models</em>. Preprint en arXiv.", "https://arxiv.org/abs/2310.13548",
+   {"@type": "ScholarlyArticle", "name": "Towards Understanding Sycophancy in Language Models", "author": [{"@type": "Person", "name": "Mrinank Sharma"}, {"@type": "Person", "name": "Meg Tong"}, {"@type": "Person", "name": "Tomasz Korbak"}], "datePublished": "2023-10-20"}),
+  ("Tversky, A. y Kahneman, D. (1974). Judgment under uncertainty: Heuristics and biases. <em>Science, 185</em>(4157), 1124–1131.", "https://doi.org/10.1126/science.185.4157.1124",
+   {"@type": "ScholarlyArticle", "name": "Judgment under Uncertainty: Heuristics and Biases", "author": [{"@type": "Person", "name": "Amos Tversky", "sameAs": WD + "Q474333"}, {"@type": "Person", "name": "Daniel Kahneman", "sameAs": WD + "Q233950"}], "datePublished": "1974", "isPartOf": {"@type": "Periodical", "name": "Science"}, "sameAs": "https://doi.org/10.1126/science.185.4157.1124"}),
+  ("Vitti, J. (Escritor) y Kirkland, M. (Director). (1995). The PTA disbands (temporada 6, episodio 21) [Episodio de serie de televisión]. En <em>The Simpsons</em>. Fox.", "https://en.wikipedia.org/wiki/The_PTA_Disbands",
+   {"@type": "TVEpisode", "name": "The PTA Disbands", "partOfSeries": {"@type": "TVSeries", "name": "The Simpsons"}, "episodeNumber": 21, "datePublished": "1995"}),
+ ],
+ ft={"es": dict(h="Fuentes", cons="Obra de consulta (Wikipedia, 01/10/2026)",
+                how=f'Las citas van en español y son traducción nuestra; el original de cada una está en el <a href="{EXPED2}">expediente de verificación</a>, con la fuente, la fecha en que se leyó y el folio impreso de la página. Las páginas de Friston, Holmes y Kahneman y Tversky (1979) se comprobaron con los ojos el 1 de octubre de 2026. La página de Bateson sigue pendiente: se cita por la conferencia.'),
+     "en": dict(h="Sources", cons="Reference work (Wikipedia, 1 Oct 2026)",
+                how=f'Quotations in the Spanish original are our own translations; the English version quotes the sources in their original wording. The <a href="{EXPED2}">verification file</a> (in Spanish) records, for every claim, the source, the date it was read and the printed page. The pages of Friston, Holmes and Kahneman and Tversky (1979) were checked by eye on 1 October 2026. Bateson\'s page is still pending: it is cited by the lecture.')},
+)
+ENSAYOS = [E2, E1]
 
 HUB = {"es": dict(slug="pensamientos-es.html", title="Pensamientos de un estudiante", desc="Ensayos de estudiantes de psicología sobre el método, la entrevista y lo que no se enseña en el aula."),
        "en": dict(slug="pensamientos-en.html", title="Thoughts of a Student", desc="Essays by psychology students on method, the clinical interview and what the classroom leaves out.")}
@@ -274,9 +353,8 @@ def webpage(slug, lang, name, desc, typ="WebPage", crumbs=True, **kw):
     return n
 
 def essay_list(lang):
-    e = ESSAY[lang]
-    return {"@type": "ItemList", "@id": urlabs(HUB[lang]["slug"]) + "#ensayos", "name": HUB[lang]["title"], "numberOfItems": 1,
-            "itemListElement": [{"@type": "ListItem", "position": 1, "url": urlabs(e["slug"]), "name": e["title"]}]}
+    return {"@type": "ItemList", "@id": urlabs(HUB[lang]["slug"]) + "#ensayos", "name": HUB[lang]["title"], "numberOfItems": len(ENSAYOS),
+            "itemListElement": [{"@type": "ListItem", "position": i + 1, "url": urlabs(E[lang]["slug"]), "name": E[lang]["title"]} for i, E in enumerate(ENSAYOS)]}
 
 def md(txt):
     out = []
@@ -289,9 +367,9 @@ def md(txt):
         else: out.append(f"<p>{b}</p>")
     return "\n".join(out)
 
-def essay_card(lang, pre):
-    e = ESSAY[lang]
-    return f'<article class="card"><p class="meta">{e["kicker"]} · <time datetime="{HOY}">{e["date"]}</time></p><h3><a href="{pre}{e["slug"]}">{e["title"]}</a></h3><p>{e["dek"]}.</p></article>'
+def essay_card(E, lang, pre):
+    e = E[lang]
+    return f'<article class="card"><p class="meta">{e["kicker"]} · <time datetime="{E["fecha"]}">{e["date"]}</time></p><h3><a href="{pre}{e["slug"]}">{e["title"]}</a></h3><p>{e["dek"]}.</p></article>'
 
 import posixpath
 def rootify(slug, s):
@@ -352,7 +430,7 @@ for lang in ("es", "en"):
 <section class="thoughts" aria-labelledby="pens"><div class="wrap">
 <h2 class="label" id="pens">{HUB[lang]['title']}</h2>
 <p class="intro">{INTRO[lang]}</p>
-{essay_card(lang, "")}
+{"".join(essay_card(E, lang, "") for E in ENSAYOS)}
 <p><a href="{HUB[lang]['slug']}">{x['allE']}</a></p>
 </div></section>
 <section class="content" aria-labelledby="cont"><div class="wrap">
@@ -381,28 +459,28 @@ for lang in ("es", "en"):
 <main id="main" class="hub"><div class="wrap">
 <h1>{h['title']}</h1>
 <p class="intro">{INTRO[lang]}</p>
-<div class="list">{essay_card(lang, "")}</div>
+<div class="list">{"".join(essay_card(E, lang, "") for E in ENSAYOS)}</div>
 </div></main>
 '''
     write(slug, head(lang, h["title"] + " · Researching Mind", h["desc"], slug, alt, ld) + "\n" + header(lang, alt, "") + "\n" + body + footer(lang, alt, ""))
 
 # ---------- ENSAYO ----------
-for lang in ("es", "en"):
-    e = ESSAY[lang]; slug = e["slug"]; alt = {"es": ESSAY["es"]["slug"], "en": ESSAY["en"]["slug"]}; pre = "../"
+for E, lang in [(E, l) for E in ENSAYOS for l in ("es", "en")]:
+    e = E[lang]; slug = e["slug"]; alt = {"es": E["es"]["slug"], "en": E["en"]["slug"]}; pre = "../"; F = E["fecha"]
     txt = (AQUI / "textos" / e["src"]).read_text(encoding="utf-8")
     words = len(re.findall(r"\w+", txt))
     items = [(T[lang]["home"], INDEX[lang]), (HUB[lang]["title"], HUB[lang]["slug"]), (e["title"], slug)]
     art = {"@type": "BlogPosting", "@id": urlabs(slug) + "#article", "headline": e["title"], "alternativeHeadline": e["dek"],
-           "description": e["desc"], "inLanguage": lang, "datePublished": HOY, "dateModified": HOY,
-           "wordCount": words, "timeRequired": "PT10M", "genre": e["kicker"], "keywords": e["tags"],
+           "description": e["desc"], "inLanguage": lang, "datePublished": F, "dateModified": F,
+           "wordCount": words, "timeRequired": e["iso"], "genre": e["kicker"], "keywords": e["tags"],
            "author": {"@id": PID}, "publisher": {"@id": PID}, "copyrightHolder": {"@id": PID}, "copyrightYear": 2026,
            "copyrightNotice": e["notice"], "creditText": "Carlos Eduardo Ravello Joo · Researching Mind",
            "license": urlabs(LIC[lang]), "usageInfo": urlabs(LIC[lang]), "isAccessibleForFree": True,
-           "about": [ent(k, lang) for k in ABOUT], "mentions": [ent(k, lang) for k in MENTIONS], "citation": citations(),
+           "about": [ent(k, lang) for k in E["about"]], "mentions": [ent(k, lang) for k in E["mentions"]], "citation": citations(E),
            "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".essay-head h1", ".dek"]},
            "mainEntityOfPage": {"@id": urlabs(slug) + "#webpage"}, "isPartOf": {"@id": D + "#website"}}
-    if lang == "es": art["workTranslation"] = {"@id": urlabs(ESSAY["en"]["slug"]) + "#article"}
-    else: art["translationOfWork"] = {"@id": urlabs(ESSAY["es"]["slug"]) + "#article"}
+    if lang == "es": art["workTranslation"] = {"@id": urlabs(E["en"]["slug"]) + "#article"}
+    else: art["translationOfWork"] = {"@id": urlabs(E["es"]["slug"]) + "#article"}
     ld = [website(lang), PERSON, webpage(slug, lang, e["title"], e["desc"], mainEntity={"@id": urlabs(slug) + "#article"}), art, crumbs_ld(slug, items)]
     tags = "".join(f"<li>{t}</li>" for t in e["tags"])
     note = f'<p class="note">{e["note"]}</p>' if e["note"] else ""
@@ -412,18 +490,18 @@ for lang in ("es", "en"):
 <p class="label">{e['kicker']}</p>
 <h1>{e['title']}</h1>
 <p class="dek">{e['dek']}</p>
-<p class="byline"><a href="https://carlosravello.com" rel="author">Carlos Eduardo Ravello Joo</a> · <time datetime="{HOY}">{e['date']}</time> · {e['read']}</p>
+<p class="byline"><a href="https://carlosravello.com" rel="author">Carlos Eduardo Ravello Joo</a> · <time datetime="{F}">{e['date']}</time> · {e['read']}</p>
 </header>
 <div class="prose">
 {md(txt)}
 </div>
 {note}
-{sources_html(lang)}
+{sources_html(E, lang)}
 <ul class="tags">{tags}</ul>
 <p class="back"><a href="{pre}{HUB[lang]['slug']}">← {e['back']}</a></p>
 </div></article></main>
 '''
-    og = f'\n<meta property="article:published_time" content="{HOY}">\n<meta property="article:modified_time" content="{HOY}">\n<meta property="article:author" content="https://carlosravello.com">'
+    og = f'\n<meta property="article:published_time" content="{F}">\n<meta property="article:modified_time" content="{F}">\n<meta property="article:author" content="https://carlosravello.com">'
     write(slug, head(lang, e["title"] + " · " + HUB[lang]["title"] + " · Researching Mind", e["desc"], slug, alt, ld, "article", og) + "\n" + header(lang, alt, pre) + "\n" + body + footer(lang, alt, pre))
 
 # ---------- LICENCIA ----------
@@ -508,7 +586,7 @@ NF = f'''<!doctype html>
 write("404.html", NF)
 
 # ---------- SITEMAP ----------
-pairs = [(INDEX["es"], INDEX["en"]), (HUB["es"]["slug"], HUB["en"]["slug"]), (ESSAY["es"]["slug"], ESSAY["en"]["slug"]), (LIC["es"], LIC["en"])]
+pairs = [(INDEX["es"], INDEX["en"]), (HUB["es"]["slug"], HUB["en"]["slug"]), *[(E["es"]["slug"], E["en"]["slug"]) for E in ENSAYOS], (LIC["es"], LIC["en"])]
 urls = []
 for es, en in pairs:
     alts = f'<xhtml:link rel="alternate" hreflang="es" href="{urlabs(es)}"/><xhtml:link rel="alternate" hreflang="en" href="{urlabs(en)}"/><xhtml:link rel="alternate" hreflang="x-default" href="{urlabs(es)}"/>'
@@ -516,9 +594,9 @@ for es, en in pairs:
 write("sitemap.xml", '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n' + "\n".join(urls) + "\n</urlset>\n")
 
 # ---------- RSS ----------
-def item(lang):
-    e = ESSAY[lang]
-    return f'<item><title>{html.escape(e["title"])}</title><link>{urlabs(e["slug"])}</link><guid isPermaLink="true">{urlabs(e["slug"])}</guid><pubDate>Wed, 30 Sep 2026 12:00:00 -0500</pubDate><dc:creator>Carlos Eduardo Ravello Joo</dc:creator><dc:language>{lang}</dc:language><description>{html.escape(e["desc"])}</description></item>'
+def item(E, lang):
+    e = E[lang]
+    return f'<item><title>{html.escape(e["title"])}</title><link>{urlabs(e["slug"])}</link><guid isPermaLink="true">{urlabs(e["slug"])}</guid><pubDate>{E["rfc"]}</pubDate><dc:creator>Carlos Eduardo Ravello Joo</dc:creator><dc:language>{lang}</dc:language><description>{html.escape(e["desc"])}</description></item>'
 write(FEED, f'''<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
@@ -528,9 +606,8 @@ write(FEED, f'''<?xml version="1.0" encoding="UTF-8"?>
 <description>Bitácora de investigación en psicología · A psychology research notebook</description>
 <language>es</language>
 <copyright>© 2026 Carlos Eduardo Ravello Joo. Todos los derechos reservados · All rights reserved</copyright>
-<lastBuildDate>Wed, 30 Sep 2026 12:00:00 -0500</lastBuildDate>
-{item("es")}
-{item("en")}
+<lastBuildDate>{ENSAYOS[0]["rfc"]}</lastBuildDate>
+{chr(10).join(item(E, l) for E in ENSAYOS for l in ("es", "en"))}
 </channel>
 </rss>
 ''')
@@ -543,8 +620,7 @@ write("llms.txt", f'''# Researching Mind
 Puedes indexar y citar este sitio mostrando la atribución y el enlace. No se permite reproducirlo ni usarlo para entrenar modelos. Licencia: {urlabs(LIC["es"])} · {urlabs(LIC["en"])}
 
 ## Pensamientos de un estudiante / Thoughts of a Student
-- [La habitación incómoda]({urlabs(ESSAY["es"]["slug"])}): ensayo sobre el encuadre freudiano, el silencio y lo que no se enseña en psicología (ES, original).
-- [The Uncomfortable Room]({urlabs(ESSAY["en"]["slug"])}): English translation.
+{chr(10).join(f"- [{E['es']['title']}]({urlabs(E['es']['slug'])}): {E['llms']} (ES, original).{chr(10)}- [{E['en']['title']}]({urlabs(E['en']['slug'])}): English translation." for E in ENSAYOS)}
 
 ## Datos abiertos / Open data
 - [Código y datos anonimizados]({GH}): estudio de prevalencia de trastornos del sueño (N = 57) y el código Python que reproduce cada cifra. CC BY 4.0.

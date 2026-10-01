@@ -63,7 +63,11 @@ for p in paginas:
     if cards and (not il or len(il[0]["itemListElement"]) != cards): malos["itemlist_vs_grid"].append(f"{rel}: grid={cards} itemlist={[len(x['itemListElement']) for x in il]}")
     if rel not in ("index.html", "index-en.html") and not any(n.get("@type") == "BreadcrumbList" for n in graph): malos["sin_breadcrumb"].append(rel)
     for n in graph:
-        if n.get("@type") == "BlogPosting" and n.get("datePublished") != "2026-09-30": malos["fecha"].append(rel)
+        if n.get("@type") == "BlogPosting":
+            visible = re.search(r'<p class="byline">.*?<time datetime="([^"]+)"', s, re.S)
+            og = re.search(r'article:published_time" content="([^"]+)"', s)
+            if not visible or n.get("datePublished") != visible.group(1) or not og or og.group(1) != visible.group(1):
+                malos["fecha"].append(rel)
     info[rel] += ([n.get("@type") for n in graph],)
 
 # Barrido del repo entero: ningun rastro de la universidad del autor (terminos en hex para no escribirlos)

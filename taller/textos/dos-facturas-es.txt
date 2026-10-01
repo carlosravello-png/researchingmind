@@ -1,0 +1,107 @@
+Del cerebro se dice en todos los libros que es el órgano más complejo del cuerpo. Puede ser. Pero lo complejo empieza por algo más simple: su tamaño y lo que consume. Tomen el dato: pesa más o menos el 2 % del cuerpo y se lleva cerca del 20 % de la energía. El dato no es mío, ya conocen el lema de esta casa. Es de Raichle y Gusnard: el cerebro «representa cerca del 2 % del peso corporal» y, sin embargo, «da cuenta de cerca del 20 % del oxígeno y, por tanto, de las calorías que consume el cuerpo». Y jamás se apaga. Lo dicen ellos también: ese gasto «es notablemente constante pese a una actividad mental y motora muy variable». Resolviendo una ecuación o mirando el techo, la factura es la misma. De cómo trabaja por dentro, eso sí, se sabe bastante menos de lo que ese dato haría pensar.
+
+Entonces aterricemos la idea, porque suena bien pero lo realmente loco es otra cosa. Si el gasto es fijo, es porque el cerebro no puede darse el lujo de gastar mucho más. Y hay quien lo midió. Lennie calculó cuánto cuesta un solo disparo neuronal y, con el consumo conocido de la corteza, cuántas neuronas pueden estar encendidas a la vez: el precio de cada disparo «limita severamente, posiblemente a menos del 1 %, el número de neuronas que pueden estar sustancialmente activas al mismo tiempo». Menos del uno por ciento. El presupuesto no es una metáfora: es un techo, y el cerebro vive pegado a él.
+
+Mi lectura es esta, y la marco como mía: un sistema con esa factura fija y ese techo no puede reconstruir, reinterpretar, volver a entender el mundo, su entorno y su propia vida desde cero cada vez que abre los ojos. Sería carísimo. Así que hace algo más barato: adivina.
+
+Adivina, pero ¿adivina qué? No, no es un prestidigitador. Hace algo más sencillo: predice con lo que ya vivió, y se ocupa sobre todo de lo que no encaja con esa predicción. ¿Les suena la frase «en base a mi experiencia»? Yo la he escuchado cuatro millones de veces en clases de psicología, y no es un delito. Es un modelo. Friston le dice prior empírico: una creencia previa que se fabrica con los datos de antes. (La palabra *prior* viene de un reverendo del siglo XVIII del que hablaremos al final; por ahora quédense con «lo que creías antes de mirar».)
+
+Nuestra obligación es pulirlo. ¿Cómo? Horas y horas de práctica, sí, pero de una práctica que reciba respuesta, porque repetir sin que nadie te devuelva el error no afina el modelo: afina la seguridad con que lo sostienes. Y sobre todo entendiendo una cosa: sabemos mucho de nuestra experiencia y casi nada de la persona que tenemos enfrente. La experiencia dice qué es frecuente. No dice qué es cierto de quien acaba de sentarse.
+
+## Una diferencia que hace una diferencia
+
+Si el cerebro predice, ¿qué le llega? Datos, de sobra: ojos, oídos, piel. Pero lo que cuenta, lo que sube y se procesa, es lo que no esperaba.
+
+El gran Gregory Bateson venía de la antropología, de la cibernética y hasta de la lingüística, y lo dijo en una conferencia de 1970, cuarenta años antes de que alguien lo escribiera en ecuaciones: la unidad elemental de información es «una diferencia que hace una diferencia». Lo que confirma lo que ya creías te informa de casi nada, aunque se sienta como mucho. Te informa lo que te mueve.
+
+Y no mencionó una ecuación. Mencionó un detalle, y el detalle es la factura del comienzo: una diferencia puede hacer una diferencia «porque las vías nerviosas por las que transita y en las que es continuamente transformada están, por su cuenta, provistas de energía». ¿Se dan cuenta del detalle? Porque yo sí, y este es mío: la comunicación no viola las leyes de la termodinámica. La diferencia la pone el mundo; la energía para responderle la pone uno, de su propio presupuesto. Homero Simpson, que en su casa obedece las leyes de la termodinámica, me dejaría vivir feliz en la suya.
+
+## Una máquina de reducir los gastos
+
+En 2010 el neurocientífico Karl Friston publicó en *Nature Reviews Neuroscience* un artículo con una pregunta en el título: si el principio de energía libre podía ser una teoría unificada del cerebro. No era nuevo, lo venía armando desde hacía años, pero ahí lo puso todo junto y se atrevió a preguntarlo en voz alta. Su punto de partida es una frase que yo pondría en la puerta de cualquier escuela de psicología: el cerebro es «una máquina de inferencia que predice y explica activamente sus sensaciones» (Friston, 2010, p. 129).
+
+Léanla con mucha calma, porque tiene dos piezas, y la segunda hereda los errores de la primera.
+
+La primera es *inferencia*. El cerebro no ve objetos: ve efectos, y de los efectos deduce las causas. Entiéndanlo así, con el famoso cruce de señales. Alguien nos sonríe dos veces en la semana. La sonrisa es el efecto; la causa la ponemos nosotros: «le gusto». Y esa persona ni nos conoce.
+
+La segunda es *predice*. Con esa causa ya deducida, el cerebro da por sabido lo que viene y actúa antes de comprobarlo. Es lanzarse de cabeza a la piscina porque la dimos por llena. No tiene ni una gota. Y la persona especial no era tan especial que digamos. Friston lo ilustra con algo más inocente, tantear en la oscuridad: anticipamos qué vamos a tocar y salimos a confirmarlo (p. 129). Es el mismo mecanismo; lo que cambia es cuánto duele equivocarse.
+
+Ahora en difícil: la frase entera es el párrafo del prior empírico, dicho por quien lo formalizó.
+
+Y claro, el resto es consecuencia. No es que el cerebro haga sus cálculos y decida bajarle al gasto: es lo que hace todo el tiempo. No puede medir directamente cuánto lo sorprende el mundo, así que trabaja con una cantidad que sí puede calcular y que funciona como techo de esa sorpresa: la energía libre. Si baja el techo, baja la sorpresa. Y la entropía, en ese marco, es la sorpresa promedio; Friston lo dice sin rodeos: «la entropía es, por tanto, una medida de incertidumbre» (p. 127).
+
+Y aquí se juntan las dos cuentas por pagar, y esto lo infiero yo, en honor a ser humano. Friston describe un cerebro donde lo que sube por el sistema es el error, lo que no se pudo predecir (p. 130). Lennie midió que cada disparo neuronal cuesta caro. Junten las dos cosas: la sorpresa se mide en información, pero se cobra en disparos, y los disparos se pagan en glucosa. Predecir bien es tener menos que transmitir. Por eso el título de esta sección no es una metáfora. Y no estoy tan solo en el salto: el propio Friston anota que el mismo principio se ha usado para inferir «las restricciones metabólicas del procesamiento neuronal» (p. 131).
+
+Una aclaración antes de seguir, porque es la crítica más seria que tiene este marco: hay quien sostiene que el principio de energía libre explica todo lo que hace un organismo vivo y por eso no predice nada que pueda fallar. Puede ser. Yo no lo uso aquí como una teoría que haya que defender, sino como un lenguaje: la gramática en la que Bateson, Kahneman y un reverendo del que hablaré al final resultan estar hablando de lo mismo. En cristiano: el marco explica muy bien por qué saltamos a la piscina vacía. Lo que vamos a hacer después del golpe, esa cadena de eventos, sigue sin ser predecible.
+
+Cuando la predicción falla hay dos salidas. Se cambia el modelo, y a eso le llamamos percibir y aprender. O se cambia el mundo para que se parezca a la predicción, y a eso le llamamos actuar; Friston lo llama inferencia activa (p. 129). Para quien estudia psicología, la segunda salida es la incómoda. Quiere decir que no solo interpretamos la evidencia según lo que esperamos: salimos a buscar la evidencia que esperamos.
+
+## Un psicólogo que ganó el Nobel
+
+Hasta aquí, cómo debería funcionar. Daniel Kahneman y Amos Tversky se pasaron la carrera midiendo cómo funciona de verdad.
+
+Y lo cito tal cual, porque la puesta en escena tiene mucho que ver. Me la juego con esto: la economía es de las escuelas más duras del mundo para publicar siquiera. No es una impresión mía. Card y DellaVigna contaron todos los artículos de las cinco revistas principales desde 1970 y encontraron que la tasa de aceptación «ha caído del 15 % al 6 %». Seis de cada cien. Y aun así un psicólogo ganó un premio ahí. Kahneman recibió en 2002 el premio del Banco de Suecia en memoria de Alfred Nobel, el que todos llamamos Nobel de Economía, aunque no esté en el testamento, por «haber integrado conocimientos de la investigación psicológica en la ciencia económica, especialmente en lo que respecta al juicio humano y la toma de decisiones bajo incertidumbre». Lo recibió solo. Tversky había muerto en 1996 y el premio no se da póstumo; buena parte del trabajo premiado era suyo. Y la teoría que premiaron había salido en 1979 en *Econometrica*, la revista más matemática de todas.
+
+¿Por qué? No ganó por demostrar que la gente se equivoca. Eso cualquiera lo sabe. Ganó por dos cosas que juntas son raras.
+
+Demostró que nos equivocamos de forma sistemática y predecible. La economía tenía un modelo del ser humano, el agente racional, que calculaba probabilidades y maximizaba. Kahneman y Tversky no dijeron «la gente es irracional»; dijeron «la gente se desvía de ese modelo siempre en la misma dirección», y lo midieron: tiramos la tasa base, juzgamos por parecido, y «las pérdidas pesan más que las ganancias» (Kahneman y Tversky, 1979, p. 279): perder cien duele más de lo que alegra ganar cien. Un error aleatorio no se puede modelar. Un error sistemático sí.
+
+Y entregaron el modelo de reemplazo. La teoría de las perspectivas (*prospect theory*, 1979) no es una crítica, es una ecuación que predice qué va a elegir la gente, y predice mejor que la del agente racional. Eso es lo que los economistas no podían ignorar: no les quitaron un modelo, les dieron otro que funcionaba.
+
+Tres de sus hallazgos bastan para este ensayo. El primero, del artículo de 1974 en *Science*: «cuando no se da ninguna evidencia específica, las probabilidades previas se usan correctamente; cuando se da evidencia sin valor, las probabilidades previas se ignoran» (Tversky y Kahneman, 1974, p. 1124). O sea, respetamos el prior hasta que alguien nos cuenta algo del caso, aunque ese algo no diga nada. El segundo: juzgamos probable lo que se parece al estereotipo, y a eso lo llamaron representatividad. El tercero es el que más me inquieta: sentimos una seguridad enorme en juicios muy falibles, y a eso lo llamaron ilusión de validez. El ejemplo que ellos mismos eligieron, y no yo, es una entrevista: al entrevistar a un candidato confiamos mucho en nuestra predicción de cómo le irá, «a pesar de saber que las entrevistas son notoriamente falibles» (Kahneman y Tversky, 1982, p. 66). Guárdenlo, que al final volvemos a eso.
+
+La experiencia no es refugio. Los investigadores experimentados caen en los mismos sesgos, escriben, «cuando piensan intuitivamente» (Tversky y Kahneman, 1974, p. 1130). Esa condición casi siempre se recorta al citar, y es la importante. ¿Entonces nunca hay que confiar en la intuición? Kahneman, ya junto a Gary Klein, dio el criterio que esta página viene persiguiendo desde el primer párrafo: la intuición experta merece confianza cuando el entorno tiene regularidades válidas y cuando hubo oportunidad de aprenderlas con práctica y retroalimentación (Kahneman y Klein, 2009, p. 520). Y dejaron una advertencia: «una confianza subjetiva alta no es buen indicador de validez» (p. 521). Es el párrafo de la práctica que recibe respuesta, dicho por quienes lo midieron.
+
+Una última cosa, y la cuento porque honra al personaje. Su libro de divulgación, *Pensar rápido, pensar despacio*, tiene un capítulo que se apoyaba en estudios ajenos que después no resistieron la replicación. Kahneman lo reconoció por escrito en 2017: «deposité demasiada fe en estudios con poca potencia». Lo que él y Tversky midieron ellos mismos, lo que se premió, sigue en pie. Pero fíjense en el gesto: un hombre de ochenta y dos años corrigiendo su propio libro en público porque llegó evidencia que no encajaba. Es este ensayo entero en una sola escena.
+
+## Y lo que uno lleva adentro, ¿importa?
+
+Todo muy bonito. El cerebro predice, ahorra, se equivoca en la misma dirección y un psicólogo ganó un premio por medirlo. Pero estamos en una página para futuros psicólogos, y no lo he olvidado: ¿y lo que uno lleva adentro? ¿Dónde quedan el miedo, la historia de cada uno, lo que se siente cuando el mundo no encaja?
+
+Resulta que ya estaba en el ensayo, solo que con otro nombre. El prior no es una fórmula: es lo que uno lleva adentro. Está hecho de lo que viviste, de a quiénes conociste, de las veces que te fue bien y de las que no. Cuando dices «en base a mi experiencia», estás describiendo tu biografía convertida en modelo. Y cuando ese modelo falla, no falla en una pizarra. Falla en el cuerpo.
+
+Todo esto suena frío hasta que uno pregunta cómo se vive. Hirsh, Mar y Peterson propusieron en 2012, en *Psychological Review*, que la incertidumbre surge del conflicto entre percepciones y cursos de acción que compiten entre sí, y que «se experimenta subjetivamente como ansiedad» (Hirsh et al., 2012, p. 304). Y añadieron que las metas claras ayudan a contenerla, porque reducen las alternativas en competencia.
+
+Piensen en la primera vez que se sentaron frente a alguien que venía a pedirles ayuda. Esa ansiedad no era un defecto de fábrica. Era el modelo diciendo: no tengo con qué predecir esto. Visto así, la ansiedad de todos los días deja de ser una avería. Es la señal de que la sorpresa no logra bajar. Lo otro, la ansiedad que no se apaga aunque el mundo ya no sorprenda, es asunto de la clínica, y ahí no me meto en este ensayo; lo digo para que nadie lea «la ansiedad es una señal» como «la ansiedad no es un problema».
+
+El psiquiatra Jeremy Holmes llevó el marco de Friston al consultorio. Para él, el objetivo del cerebro es «reducir constantemente la entropía informacional y maximizar el sentido» (Holmes, 2022, p. 165), y el terapeuta funciona como un «cerebro prestado» que ayuda a tolerar lo que el paciente todavía no puede procesar solo (p. 167). Yo lo leo así: quien acompaña no corrige el error de predicción del otro. Lo sostiene el tiempo suficiente para que el otro corrija su propio modelo. Por eso el encuadre, la hora fija, las reglas dichas en voz alta, no es un trámite: es una forma de bajarle la incertidumbre al que llega. Pero eso es tema del final.
+
+## Un espejo que no esperábamos
+
+Hay una versión computacional de todo esto que nos está pasando ahora mismo.
+
+Los asistentes de inteligencia artificial se ajustan con retroalimentación humana: la gente califica respuestas y el modelo aprende a dar las que reciben buena nota. Un grupo de investigadores estudió qué sale de ahí. Encontraron que cinco asistentes de punta mostraban de forma consistente adulación, es decir, respuestas que coinciden con lo que el usuario cree antes que con lo verdadero. Y parte del origen está en nosotros: tanto las personas como los modelos que aprenden sus preferencias eligieron, una fracción no despreciable de las veces, una respuesta aduladora bien escrita por encima de una correcta (Sharma et al., 2023).
+
+Es el sesgo de confirmación escrito en una máquina. Un sistema entrenado para no incomodarnos aprende nuestros priors y nos los devuelve con buena prosa. Para quien se prepara para escuchar a otros, el espejo es incómodo: el terapeuta que le da la razón en todo hace lo mismo, con menos parámetros. Y ojo, que no es lo mismo aceptar a la persona que darle la razón; la primera es un oficio, la segunda es adulación.
+
+## Qué es, entonces, la psicología computacional
+
+¿Y a dónde voy con todo esto? Lo respondo sin miedo, y con un poco de vergüenza: hay algo que me viene picando el diente desde hace tiempo y en lo que estoy trabajando. No soy un experto, solo exploro. Pero hay un término vigente, moderno, que cada día y cada hora cobra más sentido: psicología computacional. En este ensayo no voy a profundizar en él. Lo admito, por ahora solo sumo palabras para parecer más interesante; como prefacio me parece suficiente. Pero les dejo la definición.
+
+La psicología cognitiva pregunta cómo pensamos. La computacional da un paso más: escribe la respuesta como un modelo que se puede correr. Ahí está su gracia. Mientras una teoría vive en palabras, se puede estirar hasta que encaje con cualquier cosa. Cuando la escribes como modelo, la corres y te devuelve un número, se nota dónde falla.
+
+Hay una regla que dice cómo debería actualizarse una creencia, y la vamos a ver enseguida. Kahneman y Tversky ponen los datos: cómo se actualiza de verdad. El modelo es el puente entre las dos cosas, y es justo lo que casi no se enseña.
+
+Por eso lo que viene en este sitio es un laboratorio. Experimentos clásicos que se hacen en el navegador en un par de minutos, con tu resultado a la vista y el modelo detrás para moverle las perillas. Vamos a empezar por decidir bajo incertidumbre: la tasa base, el punto de corte de una prueba y cómo se acumula la evidencia antes de decidir. Lo que hagas ahí no sale de tu pantalla.
+
+## El hilo que no nombré: un reverendo del siglo XVIII
+
+Hay un nombre que aparece en todo este ensayo sin aparecer. En la facultad casi nadie sabe quién es, y yo tampoco lo sabía hasta hace poco: Thomas Bayes. Un pastor presbiteriano inglés, nacido hacia 1701, que resolvió un problema de probabilidad y nunca lo publicó. Lo publicó un amigo, Richard Price, dos años después de su muerte, en 1763.
+
+Lo que dejó escrito es una regla, y la regla dice cómo debería cambiar una creencia cuando llega evidencia nueva. En fácil: tienes lo que creías antes de mirar; eso es el prior, el «en base a mi experiencia» de la primera parte. Tienes lo que vale lo que acabas de ver: una sonrisa vale poco, un «me gustas» vale mucho. Y de juntar las dos cosas sale lo que deberías creer después. Eso es todo. Ni una fórmula más.
+
+Pero fíjense en lo que hace esa regla con cada pieza de este ensayo. Bateson: solo es evidencia lo que mueve el prior. Friston: el cerebro es una máquina que aplica esa regla sin saber que la aplica, y paga en glucosa cada vez que le sale mal. Kahneman y Tversky: la regla dice cómo deberíamos actualizar, y nosotros no lo hacemos; tiramos el prior en cuanto alguien nos describe el caso. Hirsh, Mar y Peterson: cuando la actualización no cierra, se siente, y se llama ansiedad. Y la máquina que nos adula aprendió nuestros priors y nos los devuelve en vez de moverlos.
+
+Lo digo directamente: sin esa regla este ensayo no tendría ni pies ni cabeza. No la puse al principio porque no quería que sonara a clase de estadística. La puse al final porque fue así como pasó: me ayudó a encontrar la forma de explicar y de escribir esto. Un pastor del siglo XVIII me ordenó las ideas de un salón de psicología del siglo XXI. Si eso no es una diferencia que hace una diferencia, no sé qué es.
+
+## La segunda factura
+
+El cerebro paga dos facturas. La primera la paga solo. La segunda, a veces, necesita a alguien al lado que no se apure en pagarla por él.
+
+Y aquí resuelvo lo que fui dejando para el final. Este ensayo habló de energía, de disparos neuronales, de un pastor del siglo XVIII y de un premio de economía, y a cada rato se asomó una entrevista. No fue descuido. La entrevista es el lugar donde todo esto se cobra: ahí está el prior del que escucha, la sonrisa que se interpreta de más, la evidencia que se tira en cuanto el caso se describe, la seguridad que sube cuando la validez baja. Y ahí está el encuadre, que no es un trámite sino la forma de bajarle la incertidumbre al que llega; y el silencio del que acompaña, que no es pasividad sino no pagar la segunda factura por el otro.
+
+Me quedan dos preguntas picando, porque ando pensativo en dos temas: las entrevistas y el sesgo de confirmación. Se las dejo, y me las dejo a mí también, hasta la próxima.
+
+Cuando estás sentado frente a alguien, ¿estás mirando a la persona o estás mirando lo que esperabas ver?
+
+Y cuando conversas con una inteligencia artificial, ¿te está haciendo una entrevista con algún sesgo, o con todos los sesgos posibles?

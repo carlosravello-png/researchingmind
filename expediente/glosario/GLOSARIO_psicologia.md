@@ -1007,10 +1007,11 @@ information». Si lo usas en un trabajo, esa aclaración va sí o sí, porque el
 **Definición.** «The negative log-probability of an outcome. An improbable outcome (for example,
 water flowing uphill) is therefore surprising.»
 
-**Fuente.** Friston (2010), p. 128.
+**Fuente.** Friston (2010), p. 128 (recuadro de márgenes). En el texto corrido la idea aparece ya en la
+p. 127: «Entropy is also the average self information or 'surprise'».
 
-**Ojo.** **Dato a comprobar.** Una de las dos extracciones sitúa esta entrada en la p. 127 y la otra
-en la p. 128. Todas las demás coinciden. Antes de citarla, ábrela.
+**Ojo.** **Comprobado el 01/10/2026** leyendo el folio impreso de cada página: la definición del recuadro está
+en la **p. 128**; la discrepancia venía de que el texto corrido la menciona en la 127.
 
 ---
 
@@ -1078,14 +1079,16 @@ pudo predecir. Lo que se propaga es **el error**, no la señal entera.
 **Definición.** «An agent will selectively sample the sensory inputs that it expects. This is known
 as active inference.»
 
-**Fuente.** Friston (2010), p. 130.
+**Fuente.** Friston (2010), **p. 129**.
 
 **Para qué sirve.** Aquí está el golpe para tu carrera: el organismo no solo interpreta la evidencia
 según su modelo, **sale a buscar la evidencia que su modelo espera**. Es la versión neurocientífica
 de la estrategia de prueba confirmatoria de De Bruyn (2003, p. 95).
 
-**Ojo.** **Dato a comprobar.** Esta entrada la sostiene una sola de las dos extracciones; la otra no
-la encontró en el recuadro de márgenes. Verifícala antes de citarla.
+**Ojo.** **Comprobado el 01/10/2026** en el folio impreso: la frase está en la **p. 129** (no en la 130, como
+decía la única extracción que la había encontrado), en el texto corrido, no en el recuadro. Friston la ilustra
+ahí mismo con el ejemplo de tantear en la oscuridad: «we anticipate what we might touch next and then try to
+confirm those expectations».
 
 ---
 
@@ -1107,8 +1110,8 @@ reduce informational entropy and maximise meaning», y el terapeuta funciona com
 brain»**, un cerebro prestado que procesa el material que el paciente no pudo vincular a ningún
 modelo previo.
 
-**Fuente.** Holmes (2022). «The brain's aim…» en la **p. 164**; «Energy equates to information» en la
-**p. 165**; el «borrowed brain» en la **p. 166**, donde escribe: «The holding and *negative capability*
+**Fuente.** Holmes (2022). «The brain's aim…» en la **p. 165**; «Energy equates to information» en la
+**p. 165**; el «borrowed brain» en la **p. 167**, donde escribe: «The holding and *negative capability*
 of the therapist's *borrowed brain* paves the way…».
 
 **Para qué sirve.** Es lo que impide que citar a Friston suene a fanfarronada. Holmes es psiquiatra,
@@ -1126,7 +1129,7 @@ la 164 a la 168 y es de acceso abierto, así que comprobarlas te cuesta un clic.
 likelihood of errors in both memory and perception, and ending with a portion that represents that
 which cannot be predicted. This is *prediction error*».
 
-**Fuente.** Holmes (2022), p. 164.
+**Fuente.** Holmes (2022), p. 165.
 
 ---
 
@@ -1622,11 +1625,13 @@ Términos que conviene incorporar cuando se lean en fuente:
   *Steps to an ecology of mind*. El Internet Archive lo tiene en préstamo restringido y su visor no
   respondió. Mientras no se consiga, la frase se cita por la conferencia de 1970, nunca con página
   inventada.
-- **Las páginas de Holmes (2022).** Se leyó el HTML, que no trae folios. El artículo va de la 164 a
-  la 168; para citar textual hay que abrir el PDF de Cambridge, que es de acceso abierto.
-- **Comprobar con los ojos tres datos de Friston (2010):** la página de «surprise» (una extracción
-  dice 127 y otra 128), la de «active inference» (la sostiene una sola extracción) y, en general,
-  cualquiera de las catorce que vaya a entrar a un trabajo calificado.
+- ~~**Las páginas de Holmes (2022).**~~ **Resuelto el 01/10/2026** en el PDF de Cambridge, leyendo el folio
+  impreso de cada página: «The brain's aim» y «prediction error» están en la **p. 165** (no en la 164) y el
+  «borrowed brain» en la **p. 167** (no en la 166). «Energy equates to information» (p. 165) y el «virtual»
+  (p. 167) estaban bien. Tres de cinco páginas estaban mal: la regla cero, otra vez.
+- ~~**Comprobar con los ojos tres datos de Friston (2010).**~~ **Resuelto el 01/10/2026** leyendo el folio
+  impreso de cada página del PDF: «surprise» está en el recuadro de la **p. 128**; «active inference» está en
+  la **p. 129** (la extracción decía 130). Las demás páginas del recuadro se mantienen.
 - **Comprobar las páginas de Hirsh, Mar y Peterson (2012).** Vienen de una sola copia, la del propio
   autor.
 - **Jung en fuente primaria.** Todo lo junguiano de la sección G está leído a través de McGovern et

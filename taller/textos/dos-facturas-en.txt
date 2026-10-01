@@ -1,0 +1,107 @@
+Every book says the brain is the most complex organ in the body. Maybe. But the complexity starts with something simpler: its size and what it burns. Take the figure: it weighs roughly 2% of the body and takes about 20% of the energy. The figure is not mine, you know the motto of this house. It is from Raichle and Gusnard: the brain "represents about 2% of the body weight" and yet "accounts for about 20% of the oxygen and, hence, calories consumed by the body". And it never switches off. They say that too: that expense "is remarkably constant despite widely varying mental and motoric activity". Solving an equation or staring at the ceiling, the bill is the same. How it works inside, on the other hand, is known far less well than that figure would suggest.
+
+So let us bring the idea down to earth, because it sounds good but the truly wild part is something else. If the expense is fixed, it is because the brain cannot afford to spend much more. And someone measured it. Lennie worked out what a single neuronal spike costs and, from the known energy consumption of cortex, how many neurons can be switched on at once: the price of each spike "severely limits, possibly to fewer than 1%, the number of neurons that can be substantially active concurrently". Fewer than one in a hundred. The budget is not a metaphor: it is a ceiling, and the brain lives pressed against it.
+
+My reading is this, and I mark it as mine: a system with that fixed bill and that ceiling cannot rebuild, reinterpret, understand all over again the world, its surroundings and its own life from scratch every time it opens its eyes. It would cost a fortune. So it does something cheaper: it guesses.
+
+It guesses, but guesses what? No, it is not a conjurer. It does something simpler: it predicts from what it has already lived, and it attends above all to whatever does not fit that prediction. Does the phrase "in my experience" ring a bell? I have heard it four million times in psychology classes, and it is not a crime. It is a model. Friston calls it an empirical prior: a prior belief built from the data that came before. (The word *prior* comes from an eighteenth-century clergyman we will meet at the end; for now hold on to "what you believed before looking".)
+
+Our obligation is to polish it. How? Hours and hours of practice, yes, but practice that gets an answer back, because repeating without anyone returning your error does not sharpen the model: it sharpens the certainty with which you hold it. And above all by understanding one thing: we know a great deal about our own experience and almost nothing about the person in front of us. Experience tells you what is frequent. It does not tell you what is true of the person who just sat down.
+
+## A difference which makes a difference
+
+If the brain predicts, what reaches it? Data, more than enough: eyes, ears, skin. But what counts, what travels up and gets processed, is what it did not expect.
+
+The great Gregory Bateson came from anthropology, from cybernetics and even from linguistics, and he said it in a 1970 lecture, forty years before anyone wrote it in equations: the elementary unit of information is "a difference which makes a difference". What confirms what you already believed tells you almost nothing, even though it feels like a lot. What informs you is what moves you.
+
+And he did not mention an equation. He mentioned a detail, and the detail is the bill from the beginning: a difference can make a difference "because the neural pathways along which it travels and is continually transformed are themselves provided with energy". Do you see the detail? Because I do, and this part is mine: communication does not break the laws of thermodynamics. The world supplies the difference; the energy to respond to it is supplied by you, out of your own budget. Homer Simpson, who in his house obeys the laws of thermodynamics, would happily let me live in his.
+
+## A machine for cutting costs
+
+In 2010 the neuroscientist Karl Friston published in *Nature Reviews Neuroscience* an article with a question in its title: whether the free-energy principle could be a unified theory of the brain. It was not new, he had been building it for years, but there he put it all together and dared to ask the question out loud. His starting point is a sentence I would put on the door of every psychology school: the brain is "an inference machine that actively predicts and explains its sensations" (Friston, 2010, p. 129).
+
+Read it very slowly, because it has two parts, and the second inherits the errors of the first.
+
+The first is *inference*. The brain does not see objects: it sees effects, and from the effects it works out the causes. Think of it as the famous crossed wires. Someone smiles at us twice in a week. The smile is the effect; the cause we supply ourselves: "they like me". And that person does not even know we exist.
+
+The second is *predicts*. With that cause already worked out, the brain takes what comes next for granted and acts before checking. It is diving headfirst into the pool because we assumed it was full. There is not a drop in it. And the special someone was not so special after all. Friston illustrates it with something more innocent, feeling our way in the dark: we anticipate what we will touch next and go out to confirm it (p. 129). It is the same mechanism; what changes is how much it hurts to be wrong.
+
+Now the hard version: the whole sentence is the empirical-prior paragraph, said by the man who formalised it.
+
+And of course, the rest follows. It is not that the brain does its sums and decides to cut spending: it is what it does all the time. It cannot measure directly how much the world surprises it, so it works with a quantity it can compute, one that acts as a ceiling on that surprise: free energy. Lower the ceiling and the surprise comes down. And entropy, in that framework, is average surprise; Friston says it plainly: "Entropy is therefore a measure of uncertainty" (p. 127).
+
+And here the two bills come together, and this part I infer myself, in honour of being human. Friston describes a brain where what travels up the system is the error, what could not be predicted (p. 130). Lennie measured that every spike is expensive. Put the two together: surprise is measured in information, but it is charged in spikes, and spikes are paid in glucose. Predicting well means having less to transmit. That is why the title of this section is not a metaphor. And I am not so alone in the leap: Friston himself notes that the same principle has been used to infer "the metabolic constraints on neuronal processing" (p. 131).
+
+One clarification before going on, because it is the most serious criticism this framework faces: some hold that the free-energy principle explains everything a living organism does and therefore predicts nothing that could fail. Maybe so. I am not using it here as a theory to defend, but as a language: the grammar in which Bateson, Kahneman and a clergyman I will get to at the end turn out to be talking about the same thing. In plain words: the framework explains very well why we dived into the empty pool. What we will do after the blow, that chain of events, remains unpredictable.
+
+When a prediction fails there are two ways out. You change the model, and we call that perceiving and learning. Or you change the world so it looks more like the prediction, and we call that acting; Friston calls it active inference (p. 129). For anyone studying psychology, the second way out is the uncomfortable one. It means we do not just read the evidence through what we expect: we go out and look for the evidence we expect.
+
+## A psychologist who won the Nobel
+
+So far, how it ought to work. Daniel Kahneman and Amos Tversky spent their careers measuring how it really works.
+
+And I quote it as it stands, because the staging matters a great deal. I will stake this: economics is one of the hardest fields in the world even to publish in. That is not just my impression. Card and DellaVigna counted every article in the five leading journals since 1970 and found that the acceptance rate "has fallen from 15% to 6%". Six in a hundred. And still a psychologist won a prize there. In 2002 Kahneman received the Sveriges Riksbank Prize in Economic Sciences in Memory of Alfred Nobel, the one we all call the Nobel in Economics even though it is not in the will, "for having integrated insights from psychological research into economic science, especially concerning human judgment and decision-making under uncertainty". He received it alone. Tversky had died in 1996 and the prize is not awarded posthumously; a large part of the work being honoured was his. And the theory they honoured had come out in 1979 in *Econometrica*, the most mathematical journal of them all.
+
+Why? He did not win for showing that people make mistakes. Anyone knows that. He won for two things that are rare together.
+
+He showed that we are wrong in a systematic, predictable way. Economics had a model of the human being, the rational agent, who computed probabilities and maximised. Kahneman and Tversky did not say "people are irrational"; they said "people deviate from that model always in the same direction", and they measured it: we throw out the base rate, we judge by resemblance, and "losses loom larger than gains" (Kahneman & Tversky, 1979, p. 279): losing a hundred hurts more than winning a hundred pleases. A random error cannot be modelled. A systematic one can.
+
+And they delivered the replacement model. Prospect theory (1979) is not a critique, it is an equation that predicts what people will choose, and it predicts better than the rational agent's. That is what economists could not ignore: they were not robbed of a model, they were handed another one that worked.
+
+Three of their findings are enough for this essay. The first, from the 1974 article in *Science*: "When no specific evidence is given, prior probabilities are properly utilized; when worthless evidence is given, prior probabilities are ignored" (Tversky & Kahneman, 1974, p. 1124). In other words, we respect the prior until someone tells us something about the case, even if that something says nothing. The second: we judge as probable whatever resembles the stereotype, and they called that representativeness. The third is the one that unsettles me most: we feel enormous confidence in highly fallible judgments, and they called that the illusion of validity. The example they chose themselves, not I, is an interview: when interviewing a candidate we feel great confidence in our prediction of how they will do, "despite our knowledge that interviews are notoriously fallible" (Kahneman & Tversky, 1982, p. 66). Hold on to that; we come back to it at the end.
+
+Experience is no refuge. Experienced researchers fall into the same biases, they write, "when they think intuitively" (Tversky & Kahneman, 1974, p. 1130). That condition is almost always cut when the line is quoted, and it is the one that matters. So should intuition never be trusted? Kahneman, now with Gary Klein, gave the criterion this page has been chasing since its first paragraph: expert intuition deserves trust when the environment has valid regularities and when there was a chance to learn them through practice and feedback (Kahneman & Klein, 2009, p. 520). And they left a warning: "high subjective confidence is not a good indication of validity" (p. 521). It is the paragraph about practice that gets an answer back, said by the people who measured it.
+
+One last thing, and I tell it because it does the man credit. His popular book, *Thinking, Fast and Slow*, has a chapter that rested on other people's studies which later failed to replicate. Kahneman acknowledged it in writing in 2017: "I placed too much faith in underpowered studies". What he and Tversky measured themselves, what was honoured, still stands. But look at the gesture: an eighty-two-year-old man correcting his own book in public because evidence arrived that did not fit. It is this whole essay in a single scene.
+
+## And what we carry inside, does it matter?
+
+All very nice. The brain predicts, saves, errs in the same direction, and a psychologist won a prize for measuring it. But this is a page for future psychologists, and I have not forgotten that: what about what we carry inside? Where do fear, each person's history, what it feels like when the world does not fit, come in?
+
+It turns out it was in the essay all along, under another name. The prior is not a formula: it is what you carry inside. It is made of what you lived, of whom you met, of the times things went well and the times they did not. When you say "in my experience", you are describing your biography turned into a model. And when that model fails, it does not fail on a whiteboard. It fails in the body.
+
+All of this sounds cold until you ask what it is like to live it. Hirsh, Mar and Peterson proposed in 2012, in *Psychological Review*, that uncertainty arises from conflict between competing perceptual and behavioral affordances, and that it "is experienced subjectively as anxiety" (Hirsh et al., 2012, p. 304). They added that clear goals help to contain it, because they reduce the spread of competing alternatives.
+
+Think of the first time you sat across from someone who had come to ask you for help. That anxiety was not a factory defect. It was the model saying: I have nothing to predict this with. Seen this way, everyday anxiety stops being a breakdown. It is the signal that surprise is not coming down. The other thing, the anxiety that does not switch off even when the world has stopped surprising, is a matter for the clinic, and I stay out of it in this essay; I say so in case anyone reads "anxiety is a signal" as "anxiety is not a problem".
+
+The psychiatrist Jeremy Holmes took Friston's framework into the consulting room. For him, "the brain's aim is constantly to reduce informational entropy and maximise meaning" (Holmes, 2022, p. 165), and the therapist works as a "borrowed brain" that helps tolerate what the patient cannot yet process alone (p. 167). I read it like this: whoever accompanies does not correct the other person's prediction error. They hold it long enough for the other to correct their own model. That is why the frame, the fixed hour, the rules said out loud, is not a formality: it is a way of lowering the uncertainty of the person who walks in. But that is a matter for the end.
+
+## A mirror we did not expect
+
+There is a computational version of all this happening to us right now.
+
+AI assistants are tuned with human feedback: people rate answers and the model learns to give the ones that score well. A group of researchers studied what comes out of that. They found that five state-of-the-art assistants consistently showed sycophancy, that is, responses that match what the user believes rather than what is true. And part of the cause is us: both people and the models that learn their preferences chose, a non-negligible fraction of the time, a well-written sycophantic answer over a correct one (Sharma et al., 2023).
+
+It is confirmation bias written into a machine. A system trained not to make us uncomfortable learns our priors and hands them back in good prose. For anyone preparing to listen to others, the mirror is uncomfortable: the therapist who agrees with everything is doing the same thing, with fewer parameters. And mind you, accepting the person is not the same as agreeing with them; the first is a craft, the second is flattery.
+
+## So what is computational psychology?
+
+And where am I going with all this? I will answer without fear, and with a little embarrassment: there is something that has been nagging at me for a while and that I am working on. I am no expert, I only explore. But there is a current, modern term that makes more sense every day and every hour: computational psychology. In this essay I am not going to go deep into it. I admit it, for now I am only adding words to sound more interesting; as a preface it seems enough to me. But I leave you the definition.
+
+Cognitive psychology asks how we think. Computational psychology goes one step further: it writes the answer as a model that can be run. That is the point. While a theory lives in words, it can be stretched to fit anything. Once you write it as a model, run it and get a number back, you can see where it breaks.
+
+There is a rule that says how a belief ought to be updated, and we are about to see it. Kahneman and Tversky supply the data: how it really is updated. The model is the bridge between the two, and it is exactly what is hardly ever taught.
+
+That is why what comes next on this site is a lab. Classic experiments you do in your browser in a couple of minutes, with your own result in front of you and the model behind it so you can turn the knobs. We will start with deciding under uncertainty: the base rate, the cut-off point of a test, and how evidence piles up before a decision. Whatever you do there never leaves your screen.
+
+## The thread I did not name: an eighteenth-century clergyman
+
+There is a name that appears throughout this essay without appearing. In the faculty almost nobody knows who he is, and I did not either until recently: Thomas Bayes. An English Presbyterian minister, born around 1701, who solved a problem in probability and never published it. A friend, Richard Price, published it two years after his death, in 1763.
+
+What he left behind is a rule, and the rule says how a belief ought to change when new evidence arrives. In plain terms: you have what you believed before looking; that is the prior, the "in my experience" of the first part. You have what the thing you just saw is worth: a smile is worth little, an "I like you" is worth a lot. And putting the two together gives you what you ought to believe afterwards. That is all. Not one formula more.
+
+But notice what that rule does to every piece of this essay. Bateson: only what moves the prior counts as evidence. Friston: the brain is a machine that applies that rule without knowing it applies it, and pays in glucose every time it gets it wrong. Kahneman and Tversky: the rule says how we ought to update, and we do not; we throw out the prior the moment someone describes the case. Hirsh, Mar and Peterson: when the update does not close, it is felt, and it is called anxiety. And the machine that flatters us learned our priors and hands them back instead of moving them.
+
+I will say it directly: without that rule this essay would have neither head nor tail. I did not put it at the beginning because I did not want it to sound like a statistics class. I put it at the end because that is how it happened: it helped me find the way to explain and to write this. An eighteenth-century clergyman put the ideas of a twenty-first-century psychology classroom in order for me. If that is not a difference which makes a difference, I do not know what is.
+
+## The second bill
+
+The brain pays two bills. It pays the first one alone. The second, sometimes, needs someone beside it who is in no hurry to pay it on its behalf.
+
+And here I settle what I kept leaving for the end. This essay talked about energy, about neuronal spikes, about an eighteenth-century clergyman and an economics prize, and every so often an interview peeked in. That was not carelessness. The interview is where all of this gets charged: there sits the listener's prior, the smile read into too much, the evidence thrown out the moment the case is described, the confidence that rises as validity falls. And there sits the frame, which is not a formality but the way to lower the uncertainty of the person who walks in; and the silence of the one who accompanies, which is not passivity but declining to pay the second bill on the other's behalf.
+
+Two questions keep nagging at me, because I am thinking about two things: interviews and confirmation bias. I leave them with you, and with myself too, until next time.
+
+When you sit across from someone, are you looking at the person, or at what you expected to see?
+
+And when you talk to an artificial intelligence, is it interviewing you with one bias, or with every possible bias?
