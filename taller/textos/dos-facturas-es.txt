@@ -12,9 +12,9 @@ Nuestra obligación es pulirlo. ¿Cómo? Horas y horas de práctica, sí, pero d
 
 Si el cerebro predice, ¿qué le llega? Datos, de sobra: ojos, oídos, piel. Pero lo que cuenta, lo que sube y se procesa, es lo que no esperaba.
 
-El gran Gregory Bateson venía de la antropología, de la cibernética y hasta de la lingüística, y lo dijo en una conferencia de 1970, cuarenta años antes de que alguien lo escribiera en ecuaciones: la unidad elemental de información es «una diferencia que hace una diferencia». Lo que confirma lo que ya creías te informa de casi nada, aunque se sienta como mucho. Te informa lo que te mueve.
+El gran Gregory Bateson venía de la antropología, de la cibernética y hasta de la lingüística, y lo dijo en una conferencia de 1970, cuarenta años antes de que Friston lo metiera en su marco de energía libre: la unidad elemental de información es «una diferencia que hace una diferencia». Lo que confirma lo que ya creías te informa de casi nada, aunque se sienta como mucho. Te informa lo que te mueve.
 
-Y no mencionó una ecuación. Mencionó un detalle, y el detalle es la factura del comienzo: una diferencia puede hacer una diferencia «porque las vías nerviosas por las que transita y en las que es continuamente transformada están, por su cuenta, provistas de energía». ¿Se dan cuenta del detalle? Porque yo sí, y este es mío: la comunicación no viola las leyes de la termodinámica. La diferencia la pone el mundo; la energía para responderle la pone uno, de su propio presupuesto. Homero Simpson, que en su casa obedece las leyes de la termodinámica, me dejaría vivir feliz en la suya.
+Y no mencionó una ecuación. Mencionó un detalle, y el detalle es la factura del comienzo: una diferencia puede hacer una diferencia «porque las vías nerviosas por las que transita y en las que es continuamente transformada están, por su cuenta, provistas de energía». ¿Se dan cuenta del detalle? Porque yo sí, y este es mío: la comunicación no viola las leyes de la termodinámica. La diferencia la pone el mundo; la energía para responderle la pone uno, de su propio presupuesto. Homero Simpson, que le prohibió a Lisa su máquina de movimiento perpetuo porque «en esta casa obedecemos las leyes de la termodinámica», me dejaría vivir feliz en la suya. La energía no sale gratis, ni para comunicarse.
 
 ## Una máquina de reducir los gastos
 
@@ -96,7 +96,7 @@ Lo digo directamente: sin esa regla este ensayo no tendría ni pies ni cabeza. N
 
 ## La segunda factura
 
-El cerebro paga dos facturas. La primera la paga solo. La segunda, a veces, necesita a alguien al lado que no se apure en pagarla por él.
+El cerebro paga dos facturas. La primera, la de la glucosa, la paga solo. La segunda, la de la sorpresa, el error que no pudo predecir, también la paga solo casi siempre. Pero a veces necesita a alguien al lado que no se apure en pagarla por él.
 
 Y aquí resuelvo lo que fui dejando para el final. Este ensayo habló de energía, de disparos neuronales, de un pastor del siglo XVIII y de un premio de economía, y a cada rato se asomó una entrevista. No fue descuido. La entrevista es el lugar donde todo esto se cobra: ahí está el prior del que escucha, la sonrisa que se interpreta de más, la evidencia que se tira en cuanto el caso se describe, la seguridad que sube cuando la validez baja. Y ahí está el encuadre, que no es un trámite sino la forma de bajarle la incertidumbre al que llega; y el silencio del que acompaña, que no es pasividad sino no pagar la segunda factura por el otro.
 

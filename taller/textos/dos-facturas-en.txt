@@ -12,9 +12,9 @@ Our obligation is to polish it. How? Hours and hours of practice, yes, but pract
 
 If the brain predicts, what reaches it? Data, more than enough: eyes, ears, skin. But what counts, what travels up and gets processed, is what it did not expect.
 
-The great Gregory Bateson came from anthropology, from cybernetics and even from linguistics, and he said it in a 1970 lecture, forty years before anyone wrote it in equations: the elementary unit of information is "a difference which makes a difference". What confirms what you already believed tells you almost nothing, even though it feels like a lot. What informs you is what moves you.
+The great Gregory Bateson came from anthropology, from cybernetics and even from linguistics, and he said it in a 1970 lecture, forty years before Friston placed it inside his free-energy framework: the elementary unit of information is "a difference which makes a difference". What confirms what you already believed tells you almost nothing, even though it feels like a lot. What informs you is what moves you.
 
-And he did not mention an equation. He mentioned a detail, and the detail is the bill from the beginning: a difference can make a difference "because the neural pathways along which it travels and is continually transformed are themselves provided with energy". Do you see the detail? Because I do, and this part is mine: communication does not break the laws of thermodynamics. The world supplies the difference; the energy to respond to it is supplied by you, out of your own budget. Homer Simpson, who in his house obeys the laws of thermodynamics, would happily let me live in his.
+And he did not mention an equation. He mentioned a detail, and the detail is the bill from the beginning: a difference can make a difference "because the neural pathways along which it travels and is continually transformed are themselves provided with energy". Do you see the detail? Because I do, and this part is mine: communication does not break the laws of thermodynamics. The world supplies the difference; the energy to respond to it is supplied by you, out of your own budget. Homer Simpson, who banned Lisa's perpetual-motion machine because "in this house, we obey the laws of thermodynamics", would happily let me live in his. Energy is not free, not even for communicating.
 
 ## A machine for cutting costs
 
@@ -96,7 +96,7 @@ I will say it directly: without that rule this essay would have neither head nor
 
 ## The second bill
 
-The brain pays two bills. It pays the first one alone. The second, sometimes, needs someone beside it who is in no hurry to pay it on its behalf.
+The brain pays two bills. The first, the glucose bill, it pays alone. The second, the bill for surprise, for the error it could not predict, it also pays alone almost always. But sometimes it needs someone beside it who is in no hurry to pay it on its behalf.
 
 And here I settle what I kept leaving for the end. This essay talked about energy, about neuronal spikes, about an eighteenth-century clergyman and an economics prize, and every so often an interview peeked in. That was not carelessness. The interview is where all of this gets charged: there sits the listener's prior, the smile read into too much, the evidence thrown out the moment the case is described, the confidence that rises as validity falls. And there sits the frame, which is not a formality but the way to lower the uncertainty of the person who walks in; and the silence of the one who accompanies, which is not passivity but declining to pay the second bill on the other's behalf.
 

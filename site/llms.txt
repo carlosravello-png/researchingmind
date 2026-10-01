@@ -5,8 +5,8 @@
 Puedes indexar y citar este sitio mostrando la atribución y el enlace. No se permite reproducirlo ni usarlo para entrenar modelos. Licencia: https://researchingmind.com/licencia-es · https://researchingmind.com/licencia-en
 
 ## Pensamientos de un estudiante / Thoughts of a Student
-- [En base a mi experiencia](https://researchingmind.com/pensamientos/el-cerebro-paga-dos-facturas-es): ensayo sobre el cerebro predictivo, la frase «en base a mi experiencia» como prior y los sesgos de juicio; prefacio a la psicología cognitiva y computacional (ES, original).
-- [In My Experience](https://researchingmind.com/pensamientos/el-cerebro-paga-dos-facturas-en): English translation.
+- [El cerebro que predice](https://researchingmind.com/pensamientos/el-cerebro-paga-dos-facturas-es): ensayo sobre el cerebro predictivo, la frase «en base a mi experiencia» como prior y los sesgos de juicio; prefacio a la psicología cognitiva y computacional (ES, original).
+- [The Brain That Predicts](https://researchingmind.com/pensamientos/el-cerebro-paga-dos-facturas-en): English translation.
 - [La habitación incómoda](https://researchingmind.com/pensamientos/la-habitacion-incomoda-es): ensayo sobre el encuadre freudiano, el silencio y lo que no se enseña en psicología (ES, original).
 - [The Uncomfortable Room](https://researchingmind.com/pensamientos/la-habitacion-incomoda-en): English translation.
 

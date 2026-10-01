@@ -1,6 +1,11 @@
-# Expediente de verificación — «En base a mi experiencia»
+# Expediente de verificación — «El cerebro que predice»
 
 (Título de trabajo: «El cerebro paga dos facturas»; el slug conserva ese nombre.)
+
+**Regla añadida el 01/10/2026, a raíz de un error propio (ver «Error cazado»):** verificar una referencia no es comprobar
+que el enlace abre y que la cita textual coincide. Es cotejar **campo por campo** —autor, año, título, créditos, volumen,
+páginas— contra la ficha de origen. Un enlace que funciona con campos inventados es exactamente la referencia alucinada
+que este sitio dice combatir.
 
 Versión 2, ensayo reescrito con el autor el 01/10/2026 (la v1 del 30/09 quedó sin publicar). Cada fila: afirmación ·
 fuente · cita original · cómo y cuándo se verificó. En el ensayo las citas van en español, traducción nuestra; aquí está
@@ -20,10 +25,10 @@ el original. «Folio impreso» = se leyó el número de página impreso en la pr
 
 | # | Afirmación | Fuente | Original | Verificación |
 |---|---|---|---|---|
-| 5 | «una diferencia que hace una diferencia», conferencia de 1970 | Bateson, «Form, substance and difference», Korzybski Memorial Lecture 19 (09/01/1970); *Steps to an ecology of mind* (1972); ES: Lohlé-Lumen 1998, trad. R. Alcalde | «a difference which makes a difference» | Texto verificado 29/09/2026 en EN y ES. **Página pendiente**: se cita por la conferencia |
+| 5 | «una diferencia que hace una diferencia», conferencia de 1970, «cuarenta años antes de que Friston lo metiera en su marco de energía libre» (1970 → 2010; la versión anterior decía «antes de que alguien lo escribiera en ecuaciones», falsa: Shannon, 1948) | Bateson, «Form, substance and difference», Korzybski Memorial Lecture 19 (09/01/1970); *Steps to an ecology of mind* (1972); ES: Lohlé-Lumen 1998, trad. R. Alcalde | «a difference which makes a difference» | Texto verificado 29/09/2026 en EN y ES. **Página pendiente**: se cita por la conferencia |
 | 6 | Las vías nerviosas «provistas de energía» | Ídem | «because the neural pathways along which it travels and is continually transformed are themselves provided with energy» | 29/09/2026; ES leído en pantalla (Lohlé-Lumen) |
 | 7 | Antropólogo, cibernético, lingüista | Wikidata Q314252 | «English anthropologist, linguist, semiotician…» | 01/10/2026 |
-| 8 | «Lisa, in this house, we obey the laws of thermodynamics!» | *The Simpsons*, «The PTA Disbands» (T6E21, 1995); citado en Wikipedia EN desde Halpern, *What's Science Ever Done for Us?* | — | 01/10/2026, Wikipedia EN |
+| 8 | «Lisa, in this house, we obey the laws of thermodynamics!», dicho ante la máquina de movimiento perpetuo de Lisa | *The Simpsons*, «The PTA Disbands», T6E21, emitido el 16/04/1995; **escrito por Jennifer Crittenden, dirigido por Swinton O. Scott III** (infobox de Wikipedia EN); la cita, vía Halpern, *What's Science Ever Done for Us?* | — | 01/10/2026, Wikipedia EN, campo por campo |
 | 9 | «La comunicación no viola las leyes de la termodinámica» | — | — | **Observación del autor**, marcada («este es mío») |
 
 ## 3. Friston (folio impreso comprobado el 01/10/2026, copia UC Irvine; pdf p = folio − 126)
@@ -77,6 +82,13 @@ el original. «Folio impreso» = se leyó el número de página impreso en la pr
 | # | Afirmación | Fuente | Original | Verificación |
 |---|---|---|---|---|
 | 36 | Pastor presbiteriano inglés, c. 1701–1761; nunca publicó; Richard Price lo publicó en 1763 | Wikipedia EN «Thomas Bayes»; Wikidata Q208452 | «Bayes never published… edited and published posthumously by Richard Price»; «read to the Royal Society in 1763» | 01/10/2026 |
+
+## Error cazado en revisión externa (01/10/2026)
+
+La primera versión de la fuente 15 decía «Vitti, J. (Escritor) y Kirkland, M. (Director)». **Falso.** Los créditos reales son
+Jennifer Crittenden (guion) y Swinton O. Scott III (dirección). El error lo cometió el asistente al redactar la referencia:
+verificó la frase de Homero y el enlace, y rellenó los créditos de memoria con dos nombres frecuentes en la serie. Pasó tres
+revisiones porque ninguna cotejó los créditos contra la ficha. Corregido en las fuentes de las dos versiones del ensayo.
 
 ## Correcciones que salieron de esta verificación (glosario, dos copias)
 

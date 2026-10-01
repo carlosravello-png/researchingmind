@@ -49,6 +49,10 @@ for p in paginas:
         if not any(c.is_file() for c in cands): malos["enlace_roto"].append(f"{rel} -> {h}")
     for u in re.findall(r'https://researchingmind\.com/[^"\s<]*', s):
         if u.split("#")[0].endswith(".html"): malos["enlace_roto"].append(f"{rel}: URL absoluta con .html {u}")
+    # og:image: declarada, 1200x630 y el archivo existe
+    og = re.search(r'<meta property="og:image" content="https://researchingmind\.com/(og/[^"]+)"', s)
+    if not og or not (SITE / og.group(1)).is_file() or 'name="twitter:card" content="summary_large_image"' not in s:
+        malos["enlace_roto"].append(f"{rel}: og:image ausente o sin archivo")
     # Q-IDs solo del diccionario
     for q in set(re.findall(r"wikidata\.org/wiki/(Q\d+)", s)):
         if q not in Q_OK: malos["q_sin_diccionario"].append(f"{rel}: {q}")

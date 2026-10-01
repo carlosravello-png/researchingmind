@@ -171,7 +171,7 @@ def sources_html(E, lang):
     EN = [("(s. f.)", "(n.d.)"), ("[Entrevista en video]", "[Video interview]"), ("(Trabajo original de 1925)", "(Original work published 1925)"),
           ("(Trabajo original publicado en 1925)", "(Original work published 1925)"), ("Nunberg, H. y Federn", "Nunberg, H., & Federn"),
           ("Etcheverry, Trad.). En", "Etcheverry, Trans.). In"), ("(2020, 14 de mayo)", "(2020, May 14)"), ("(Vol. 20, p. 56)", "(Vol. 20, p. 56)"),
-          (" y A. Tversky (Eds.)", ", & A. Tversky (Eds.)"), (" y DellaVigna", ", & DellaVigna"), ("(2017, 14 de febrero)", "(2017, February 14)"), ("Comentario en", "Comment on"), ("(R. Alcalde, Trad.)", "(R. Alcalde, Trans.)"), ("(Conferencia original de 1970; en inglés en", "(Original lecture 1970; in English in"), ("(Escritor) y Kirkland, M. (Director)", "(Writer), & Kirkland, M. (Director)"), ("(temporada 6, episodio 21) [Episodio de serie de televisión]", "(Season 6, Episode 21) [TV series episode]"), (" y Kahneman", ", & Kahneman"), (" y Tversky", ", & Tversky"), (" y Klein", ", & Klein"), (" y Gusnard", ", & Gusnard"), (", R. A. y Peterson", ", R. A., & Peterson"),
+          (" y A. Tversky (Eds.)", ", & A. Tversky (Eds.)"), (" y DellaVigna", ", & DellaVigna"), ("(2017, 14 de febrero)", "(2017, February 14)"), ("Comentario en", "Comment on"), ("(R. Alcalde, Trad.)", "(R. Alcalde, Trans.)"), ("(Conferencia original de 1970; en inglés en", "(Original lecture 1970; in English in"), ("(Escritora) y Scott, S. O., III (Director)", "(Writer), & Scott, S. O., III (Director)"), ("(1995, 16 de abril)", "(1995, April 16)"), ("(temporada 6, episodio 21) [Episodio de serie de televisión]", "(Season 6, Episode 21) [TV series episode]"), (" y Kahneman", ", & Kahneman"), (" y Tversky", ", & Tversky"), (" y Klein", ", & Klein"), (" y Gusnard", ", & Gusnard"), (", R. A. y Peterson", ", R. A., & Peterson"),
           ("(Eds.), ", "(Eds.), "), ("(cap. 4, pp. 48–68)", "(pp. 48–68)"), ("(Conferencia original de 1970)", "(Original lecture 1970)"), ("Preprint en arXiv", "arXiv preprint"), (". En ", ". In ")]
     for txt, url, _ in E["fuentes"]:
         if lang == "en":
@@ -189,12 +189,12 @@ E1 = dict(es=ESSAY["es"], en=ESSAY["en"], fecha="2026-09-30", rfc="Wed, 30 Sep 2
 EXPED2 = GHREPO + "/blob/main/expediente/pensamientos/el-cerebro-paga-dos-facturas_verificacion.md"
 DATOS = GHREPO + "/tree/main/site/datos"
 E2 = dict(
- es=dict(slug="pensamientos/el-cerebro-paga-dos-facturas-es.html", title="En base a mi experiencia", dek="Un prefacio a la psicología cognitiva y computacional",
+ es=dict(slug="pensamientos/el-cerebro-paga-dos-facturas-es.html", title="El cerebro que predice", dek="Un prefacio a la psicología cognitiva y computacional",
    kicker="Ensayo", date="1 de octubre de 2026", read="15 min de lectura", iso="PT15M", src="dos-facturas-es.txt",
    desc="El cerebro predice para no gastar de más. Bateson, Friston, Kahneman y un reverendo del siglo XVIII: qué es «en base a mi experiencia», cómo se pule, y por qué la ansiedad y la entrevista están en el mismo cuaderno.",
    tags=["Psicología cognitiva", "Psicología computacional", "Bayes", "Friston", "Kahneman"], note="", back="Todos los ensayos",
    notice="© 2026 Carlos Eduardo Ravello Joo — Todos los derechos reservados"),
- en=dict(slug="pensamientos/el-cerebro-paga-dos-facturas-en.html", title="In My Experience", dek="A preface to cognitive and computational psychology",
+ en=dict(slug="pensamientos/el-cerebro-paga-dos-facturas-en.html", title="The Brain That Predicts", dek="A preface to cognitive and computational psychology",
    kicker="Essay", date="1 October 2026", read="15 min read", iso="PT15M", src="dos-facturas-en.txt",
    desc="The brain predicts so as not to overspend. Bateson, Friston, Kahneman and an eighteenth-century clergyman: what «in my experience» really is, how it gets polished, and why anxiety and the interview sit in the same notebook.",
    tags=["Cognitive psychology", "Computational psychology", "Bayes", "Friston", "Kahneman"], note="Translated from the Spanish original.", back="All essays",
@@ -233,13 +233,13 @@ E2 = dict(
    {"@type": "ScholarlyArticle", "name": "Towards Understanding Sycophancy in Language Models", "author": [{"@type": "Person", "name": "Mrinank Sharma"}, {"@type": "Person", "name": "Meg Tong"}, {"@type": "Person", "name": "Tomasz Korbak"}], "datePublished": "2023-10-20"}),
   ("Tversky, A. y Kahneman, D. (1974). Judgment under uncertainty: Heuristics and biases. <em>Science, 185</em>(4157), 1124–1131.", "https://doi.org/10.1126/science.185.4157.1124",
    {"@type": "ScholarlyArticle", "name": "Judgment under Uncertainty: Heuristics and Biases", "author": [{"@type": "Person", "name": "Amos Tversky", "sameAs": WD + "Q474333"}, {"@type": "Person", "name": "Daniel Kahneman", "sameAs": WD + "Q233950"}], "datePublished": "1974", "isPartOf": {"@type": "Periodical", "name": "Science"}, "sameAs": "https://doi.org/10.1126/science.185.4157.1124"}),
-  ("Vitti, J. (Escritor) y Kirkland, M. (Director). (1995). The PTA disbands (temporada 6, episodio 21) [Episodio de serie de televisión]. En <em>The Simpsons</em>. Fox.", "https://en.wikipedia.org/wiki/The_PTA_Disbands",
-   {"@type": "TVEpisode", "name": "The PTA Disbands", "partOfSeries": {"@type": "TVSeries", "name": "The Simpsons"}, "episodeNumber": 21, "datePublished": "1995"}),
+  ("Crittenden, J. (Escritora) y Scott, S. O., III (Director). (1995, 16 de abril). The PTA disbands (temporada 6, episodio 21) [Episodio de serie de televisión]. En <em>The Simpsons</em>. Fox.", "https://en.wikipedia.org/wiki/The_PTA_Disbands",
+   {"@type": "TVEpisode", "name": "The PTA Disbands", "partOfSeries": {"@type": "TVSeries", "name": "The Simpsons"}, "partOfSeason": {"@type": "TVSeason", "seasonNumber": 6}, "episodeNumber": 21, "datePublished": "1995-04-16", "director": {"@type": "Person", "name": "Swinton O. Scott III"}, "author": {"@type": "Person", "name": "Jennifer Crittenden"}}),
  ],
  ft={"es": dict(h="Fuentes", cons="Obra de consulta (Wikipedia, 01/10/2026)",
-                how=f'Las citas van en español y son traducción nuestra; el original de cada una está en el <a href="{EXPED2}">expediente de verificación</a>, con la fuente, la fecha en que se leyó y el folio impreso de la página. Las páginas de Friston, Holmes y Kahneman y Tversky (1979) se comprobaron con los ojos el 1 de octubre de 2026. La página de Bateson sigue pendiente: se cita por la conferencia.'),
+                how=f'Las citas van en español y son traducción nuestra; el original de cada una está en el <a href="{EXPED2}">expediente de verificación</a>, con la fuente y cómo se comprobó. Las páginas de Friston (2010), Holmes (2022) y Kahneman y Tversky (1979) se leyeron en el folio impreso del PDF el 1 de octubre de 2026. Las de Tversky y Kahneman (1974), Kahneman y Tversky (1982), Kahneman y Klein (2009) y Hirsh, Mar y Peterson (2012) se comprobaron el 29 de septiembre por extracción de texto en dos o más copias independientes, y la de 1982 además en pantalla. La página de Bateson sigue pendiente: se cita por la conferencia. Los créditos de cada referencia se cotejaron campo por campo contra su ficha de origen.'),
      "en": dict(h="Sources", cons="Reference work (Wikipedia, 1 Oct 2026)",
-                how=f'Quotations in the Spanish original are our own translations; the English version quotes the sources in their original wording. The <a href="{EXPED2}">verification file</a> (in Spanish) records, for every claim, the source, the date it was read and the printed page. The pages of Friston, Holmes and Kahneman and Tversky (1979) were checked by eye on 1 October 2026. Bateson\'s page is still pending: it is cited by the lecture.')},
+                how=f'Quotations in the Spanish original are our own translations; the English version quotes the sources in their original wording. The <a href="{EXPED2}">verification file</a> (in Spanish) records, for every claim, the source and how it was checked. The pages of Friston (2010), Holmes (2022) and Kahneman and Tversky (1979) were read on the printed folio of the PDF on 1 October 2026. Those of Tversky and Kahneman (1974), Kahneman and Tversky (1982), Kahneman and Klein (2009) and Hirsh, Mar and Peterson (2012) were checked on 29 September by text extraction from two or more independent copies, and the 1982 one also on screen. Bateson’s page is still pending: it is cited by the lecture. The credits of every reference were checked field by field against their source record.')},
 )
 ENSAYOS = [E2, E1]
 
@@ -255,8 +255,13 @@ def pretty(slug):
     return slug
 def urlabs(slug): return D + pretty(slug)
 
+def ogimg(slug):
+    base = slug.rsplit("/", 1)[-1].replace(".html", "")
+    return D + "og/" + (base if (SITE / "og" / (base + ".png")).is_file() else "default") + ".png"
+
 def head(lang, title, desc, slug, alt, ld, og_type="website", extra_og=""):
     pre = "../" * slug.count("/")
+    img = ogimg(slug)
     return f'''<!doctype html>
 <html lang="{lang}">
 <head>
@@ -283,7 +288,12 @@ def head(lang, title, desc, slug, alt, ld, og_type="website", extra_og=""):
 <meta property="og:url" content="{urlabs(slug)}">
 <meta property="og:locale" content="{'es_PE' if lang == 'es' else 'en_US'}">
 <meta property="og:locale:alternate" content="{'en_US' if lang == 'es' else 'es_PE'}">
-<meta name="twitter:card" content="summary">{extra_og}
+<meta property="og:image" content="{img}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{html.escape(title)}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="{img}">{extra_og}
 <style>{CSS}</style>
 <script type="application/ld+json">
 {json.dumps({"@context": "https://schema.org", "@graph": ld}, ensure_ascii=False, indent=1)}
@@ -347,7 +357,8 @@ def crumbs_ld(slug, items):
 
 def webpage(slug, lang, name, desc, typ="WebPage", crumbs=True, **kw):
     n = {"@type": typ, "@id": urlabs(slug) + "#webpage", "url": urlabs(slug), "name": name, "description": desc, "inLanguage": lang,
-         "isPartOf": {"@id": D + "#website"}, "author": {"@id": PID}, "license": urlabs(LIC[lang]), "dateModified": HOY}
+         "isPartOf": {"@id": D + "#website"}, "author": {"@id": PID}, "license": urlabs(LIC[lang]), "dateModified": HOY,
+         "primaryImageOfPage": {"@type": "ImageObject", "url": ogimg(slug), "width": 1200, "height": 630}}
     if crumbs: n["breadcrumb"] = {"@id": urlabs(slug) + "#breadcrumb"}
     n.update(kw)
     return n
@@ -475,6 +486,7 @@ for E, lang in [(E, l) for E in ENSAYOS for l in ("es", "en")]:
            "wordCount": words, "timeRequired": e["iso"], "genre": e["kicker"], "keywords": e["tags"],
            "author": {"@id": PID}, "publisher": {"@id": PID}, "copyrightHolder": {"@id": PID}, "copyrightYear": 2026,
            "copyrightNotice": e["notice"], "creditText": "Carlos Eduardo Ravello Joo · Researching Mind",
+           "image": {"@type": "ImageObject", "url": ogimg(slug), "width": 1200, "height": 630},
            "license": urlabs(LIC[lang]), "usageInfo": urlabs(LIC[lang]), "isAccessibleForFree": True,
            "about": [ent(k, lang) for k in E["about"]], "mentions": [ent(k, lang) for k in E["mentions"]], "citation": citations(E),
            "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".essay-head h1", ".dek"]},
