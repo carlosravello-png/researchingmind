@@ -189,12 +189,12 @@ E1 = dict(es=ESSAY["es"], en=ESSAY["en"], fecha="2026-09-30", rfc="Wed, 30 Sep 2
 EXPED2 = GHREPO + "/blob/main/expediente/pensamientos/el-cerebro-paga-dos-facturas_verificacion.md"
 DATOS = GHREPO + "/tree/main/site/datos"
 E2 = dict(
- es=dict(slug="pensamientos/el-cerebro-paga-dos-facturas-es.html", title="El cerebro paga dos facturas", dek="Un prefacio a la psicología cognitiva y computacional",
+ es=dict(slug="pensamientos/el-cerebro-paga-dos-facturas-es.html", title="En base a mi experiencia", dek="Un prefacio a la psicología cognitiva y computacional",
    kicker="Ensayo", date="1 de octubre de 2026", read="15 min de lectura", iso="PT15M", src="dos-facturas-es.txt",
    desc="El cerebro predice para no gastar de más. Bateson, Friston, Kahneman y un reverendo del siglo XVIII: qué es «en base a mi experiencia», cómo se pule, y por qué la ansiedad y la entrevista están en el mismo cuaderno.",
    tags=["Psicología cognitiva", "Psicología computacional", "Bayes", "Friston", "Kahneman"], note="", back="Todos los ensayos",
    notice="© 2026 Carlos Eduardo Ravello Joo — Todos los derechos reservados"),
- en=dict(slug="pensamientos/el-cerebro-paga-dos-facturas-en.html", title="The Brain Pays Two Bills", dek="A preface to cognitive and computational psychology",
+ en=dict(slug="pensamientos/el-cerebro-paga-dos-facturas-en.html", title="In My Experience", dek="A preface to cognitive and computational psychology",
    kicker="Essay", date="1 October 2026", read="15 min read", iso="PT15M", src="dos-facturas-en.txt",
    desc="The brain predicts so as not to overspend. Bateson, Friston, Kahneman and an eighteenth-century clergyman: what «in my experience» really is, how it gets polished, and why anxiety and the interview sit in the same notebook.",
    tags=["Cognitive psychology", "Computational psychology", "Bayes", "Friston", "Kahneman"], note="Translated from the Spanish original.", back="All essays",
@@ -203,7 +203,7 @@ E2 = dict(
  about=["cognitiva", "computacional", "energialibre", "bayes"],
  mentions=["friston", "bateson", "kahneman", "tversky", "tbayes", "heuristica", "ansiedad", "psicoterapia", "llm", "adulacion"],
  consulta=[("Thomas Bayes", "https://en.wikipedia.org/wiki/Thomas_Bayes")],
- llms="ensayo sobre el cerebro predictivo, Bayes y los sesgos de juicio; puerta a la psicología cognitiva y computacional",
+ llms="ensayo sobre el cerebro predictivo, la frase «en base a mi experiencia» como prior y los sesgos de juicio; prefacio a la psicología cognitiva y computacional",
  fuentes=[
   ("Bateson, G. (1998). Forma, sustancia y diferencia (R. Alcalde, Trad.). En <em>Pasos hacia una ecología de la mente</em>. Lohlé-Lumen. (Conferencia original de 1970; en inglés en <em>Steps to an ecology of mind</em>, 1972).", "",
    {"@type": "Chapter", "name": "Form, substance and difference", "author": {"@type": "Person", "name": "Gregory Bateson", "sameAs": WD + "Q314252"}, "isPartOf": {"@type": "Book", "name": "Steps to an Ecology of Mind", "datePublished": "1972"}}),
@@ -587,10 +587,13 @@ write("404.html", NF)
 
 # ---------- SITEMAP ----------
 pairs = [(INDEX["es"], INDEX["en"]), (HUB["es"]["slug"], HUB["en"]["slug"]), *[(E["es"]["slug"], E["en"]["slug"]) for E in ENSAYOS], (LIC["es"], LIC["en"])]
+# lastmod por pagina: la fecha del ensayo en sus propias paginas; HOY en las paginas que listan (cambian con cada ensayo); la licencia no cambia
+LASTMOD = {LIC["es"]: "2026-09-30", LIC["en"]: "2026-09-30"}
+for E in ENSAYOS: LASTMOD[E["es"]["slug"]] = LASTMOD[E["en"]["slug"]] = E["fecha"]
 urls = []
 for es, en in pairs:
     alts = f'<xhtml:link rel="alternate" hreflang="es" href="{urlabs(es)}"/><xhtml:link rel="alternate" hreflang="en" href="{urlabs(en)}"/><xhtml:link rel="alternate" hreflang="x-default" href="{urlabs(es)}"/>'
-    for u in (es, en): urls.append(f'<url><loc>{urlabs(u)}</loc><lastmod>{HOY}</lastmod>{alts}</url>')
+    for u in (es, en): urls.append(f'<url><loc>{urlabs(u)}</loc><lastmod>{LASTMOD.get(u, HOY)}</lastmod>{alts}</url>')
 write("sitemap.xml", '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n' + "\n".join(urls) + "\n</urlset>\n")
 
 # ---------- RSS ----------

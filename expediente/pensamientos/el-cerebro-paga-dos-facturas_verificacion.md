@@ -1,4 +1,6 @@
-# Expediente de verificación — «El cerebro paga dos facturas»
+# Expediente de verificación — «En base a mi experiencia»
+
+(Título de trabajo: «El cerebro paga dos facturas»; el slug conserva ese nombre.)
 
 Versión 2, ensayo reescrito con el autor el 01/10/2026 (la v1 del 30/09 quedó sin publicar). Cada fila: afirmación ·
 fuente · cita original · cómo y cuándo se verificó. En el ensayo las citas van en español, traducción nuestra; aquí está
