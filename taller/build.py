@@ -21,11 +21,27 @@ PERSON = {"@type": "Person", "@id": PID, "name": "Carlos Eduardo Ravello Joo", "
           "sameAs": [ORCID, ISNI, "https://github.com/carlosravello-png"],
           "identifier": [{"@type": "PropertyValue", "propertyID": "ORCID", "value": "0009-0007-5631-7436", "url": ORCID},
                          {"@type": "PropertyValue", "propertyID": "ISNI", "value": "0000 0005 3051 4085", "url": ISNI}]}
+LUISA_ID = D + "#luisa-gamboa"
+LUISA = {"@type": "Person", "@id": LUISA_ID, "name": "Luisa Fernanda Gamboa Vela",
+         "description": {"es": "Estudiante de psicología (cuarto ciclo), Trujillo, Perú. Interés: neuropsicología y adicciones.",
+                         "en": "Psychology student (fourth cycle), Trujillo, Peru. Interests: neuropsychology and addictions."},
+         "knowsAbout": ["Neuropsicología", "Adicciones"], "memberOf": {"@id": D + "#website"}}
+def luisa(lang):
+    n = dict(LUISA); n["description"] = LUISA["description"][lang]; return n
+
+# Quienes escribimos: fichas de la portada (texto visto y aprobado por cada persona antes de publicarse)
+AUTORES = {
+ "es": [dict(name="Carlos Eduardo Ravello Joo", bio="Estudio psicología en Trujillo, Perú. Escribo sobre método, evaluación y lo que casi no se enseña.", link=(ORCID, "ORCID 0009-0007-5631-7436")),
+        dict(name="Luisa Fernanda Gamboa Vela", bio="Estudio psicología en Trujillo, cuarto ciclo, y soy madre. Entiendo la psicología como la ciencia del pensamiento, y me gusta la lectura densa, sobre todo la neuropsicología. Llegué a esto por la vida, no por el plan de estudios, y por eso mi posición es más suave que dura. Mi interés a futuro son las adicciones. Mientras tanto aprendo, leo, de vez en cuando opino, y sobre todo respeto el dato.", link=None)],
+ "en": [dict(name="Carlos Eduardo Ravello Joo", bio="I study psychology in Trujillo, Peru. I write about method, assessment and what is rarely taught.", link=(ORCID, "ORCID 0009-0007-5631-7436")),
+        dict(name="Luisa Fernanda Gamboa Vela", bio="I study psychology in Trujillo, fourth cycle, and I am a mother. I understand psychology as the science of thought, and I like dense reading, neuropsychology above all. I came to this through life, not through the syllabus, and that is why my position is softer than hard. My future interest is addictions. In the meantime I learn, I read, now and then I give an opinion, and above all I respect the data.", link=None)],
+}
+
 def website(lang):
     return {"@type": "WebSite", "@id": D + "#website", "url": D, "name": "Researching Mind",
             "description": "Bitácora de investigación en psicología: ensayos, glosario, dinámicas para el aula y datos abiertos." if lang == "es"
                            else "A psychology research notebook: essays, glossary, classroom tools and open data.",
-            "inLanguage": ["es", "en"], "author": {"@id": PID}, "publisher": {"@id": PID},
+            "inLanguage": ["es", "en"], "author": {"@id": PID}, "publisher": {"@id": PID}, "contributor": {"@id": LUISA_ID},
             "copyrightHolder": {"@id": PID}, "license": urlabs(LIC[lang])}
 
 # ---------- Diccionario Wikidata (expediente/entidades_wikidata.md, verificado 2026-09-30) ----------
@@ -78,7 +94,7 @@ CSS = (AQUI / "style.css").read_text(encoding="utf-8").replace("\n", "")
 T = {
  "es": dict(skip="Saltar al contenido", menu="Abrir menú", navlabel="Principal", home="Inicio",
    nav=[("Pensamientos", "pensamientos-es.html"), ("Glosario", "index.html#glosario"), ("Dinámicas", "index.html#dinamicas"), ("Bitácora", "index.html#bitacora"), ("Datos", "index.html#datos")],
-   sections="Secciones", author="Autor", code="Código y datos en GitHub",
+   sections="Secciones", author="Autores", code="Código y datos en GitHub",
    foot_desc="Bitácora de investigación en psicología. Trujillo, Perú.",
    secs=[("Pensamientos de un estudiante", "pensamientos-es.html"), ("Glosario", "index.html#glosario"), ("Dinámicas", "index.html#dinamicas"), ("Bitácora", "index.html#bitacora"), ("Datos abiertos", "index.html#datos")],
    help='Si estás pasando por un momento difícil, no estás solo: la <strong>Línea <a href="tel:113">113</a>, opción 5</strong>, del Ministerio de Salud del Perú ofrece orientación psicológica gratuita las 24 horas.',
@@ -86,7 +102,7 @@ T = {
    lic="Licencia", feed="RSS"),
  "en": dict(skip="Skip to content", menu="Open menu", navlabel="Main", home="Home",
    nav=[("Thoughts", "pensamientos-en.html"), ("Glossary", "index-en.html#glossary"), ("Classroom tools", "index-en.html#tools"), ("Notebook", "index-en.html#notebook"), ("Data", "index-en.html#data")],
-   sections="Sections", author="Author", code="Code and data on GitHub",
+   sections="Sections", author="Authors", code="Code and data on GitHub",
    foot_desc="A psychology research notebook. Trujillo, Peru.",
    secs=[("Thoughts of a Student", "pensamientos-en.html"), ("Glossary", "index-en.html#glossary"), ("Classroom tools", "index-en.html#tools"), ("Notebook", "index-en.html#notebook"), ("Open data", "index-en.html#data")],
    help='If you are going through a hard time, you are not alone. In Peru, <strong>Línea <a href="tel:113">113</a>, option 5</strong>, from the Ministry of Health offers free psychological support 24 hours a day. Elsewhere, please contact your local emergency services.',
@@ -330,7 +346,7 @@ def footer(lang, alt, pre):
 <div class="foot-grid">
 <div><p class="foot-brand"><b aria-hidden="true">ψ</b> Researching Mind</p><p>{t['foot_desc']}</p></div>
 <div><h2 class="label">{t['sections']}</h2><ul>{secs}</ul></div>
-<div><h2 class="label">{t['author']}</h2><p>Carlos Eduardo Ravello Joo</p><ul><li><a href="{ORCID}">ORCID</a></li><li><a href="https://carlosravello.com">carlosravello.com</a></li><li><a href="{GHREPO}">{t['code']}</a></li></ul></div>
+<div><h2 class="label">{t['author']}</h2><p>Carlos Eduardo Ravello Joo</p><ul><li><a href="{ORCID}">ORCID</a></li><li><a href="https://carlosravello.com">carlosravello.com</a></li></ul><p>Luisa Fernanda Gamboa Vela</p><ul><li><a href="{GHREPO}">{t['code']}</a></li></ul></div>
 </div>
 <p class="help">{t['help']}</p>
 <p class="rights license-notice">{t['rights'].replace('{pre}', pre)}</p>
@@ -422,7 +438,7 @@ IDX = {
 GH = GHREPO + "/tree/main/site/datos"
 for lang in ("es", "en"):
     x = IDX[lang]; slug = INDEX[lang]; alt = INDEX
-    ld = [website(lang), PERSON, webpage(slug, lang, x["title"], x["desc"], crumbs=False, mainEntity={"@id": urlabs(HUB[lang]["slug"]) + "#ensayos"}), essay_list(lang)]
+    ld = [website(lang), PERSON, luisa(lang), webpage(slug, lang, x["title"], x["desc"], crumbs=False, mainEntity={"@id": urlabs(HUB[lang]["slug"]) + "#ensayos"}), essay_list(lang)]
     lis = []
     for i, (aid, h2, p) in enumerate(x["items"]):
         tail = f'<a href="{GH}">{x["seeData"]}</a>' if i == 3 else f'<span class="status">{x["prep"]}</span>'
@@ -452,9 +468,9 @@ for lang in ("es", "en"):
 </div></section>
 <section class="author" aria-labelledby="quien"><div class="wrap">
 <h2 class="label" id="quien">{x['who']}</h2>
-<p class="name">Carlos Eduardo Ravello Joo</p>
-<p>{x['bio']}</p>
-<p><a href="{ORCID}">ORCID 0009-0007-5631-7436</a></p>
+<div class="people">
+{chr(10).join(f'<div class="person"><p class="name">{a["name"]}</p><p>{a["bio"]}</p>' + (f'<p><a href="{a["link"][0]}">{a["link"][1]}</a></p>' if a["link"] else "") + '</div>' for a in AUTORES[lang])}
+</div>
 </div></section>
 </main>
 '''
